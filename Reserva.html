@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Reserva - BeachFlats Muro Alto</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+   <link rel="icon" href="Img/favicon.ico" type="image/x-icon">
+    <!-- Para Apple/Safari -->
+    <link rel="apple-touch-icon" sizes="180x180" href="Img/favicon.ico">
+
+    <!-- Para Android/Chrome -->
+    <link rel="icon" type="image/png" sizes="192x192" href="Img/favicon.ico">
+
+    <!-- Para Windows Metro -->
+    <meta name="msapplication-TileImage" content="cImg/favicon.ico">
+    <meta name="msapplication-TileColor" content="#007b8f">
+    <link rel="shortcut icon" href="Img/favicon.ico" type="image/x-icon">
+  <style>
+    .reserva-container {
+      display: flex;
+      max-width: 1000px;
+      margin: 2rem auto;
+      gap: 2rem;
+    }
+    .property-card {
+      flex: 1;
+      background: white;
+      border-radius: 8px;
+      box-shadow: 0 6px 16px rgba(0,0,0,0.1);
+      padding: 1rem;
+      font-family: 'Inter', sans-serif;
+    }
+    .property-card img {
+      width: 100%;
+      border-radius: 8px;
+      margin-bottom: 1rem;
+    }
+    .property-details {
+      font-size: 0.9rem;
+      color: #333;
+    }
+    .property-details p {
+      margin: 0.3rem 0;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .property-details p i {
+      color: #007b8f;
+    }
+    .btn-detalhes {
+      margin-top: 1rem;
+      padding: 0.5rem 1rem;
+      border: 1px solid #007b8f;
+      background: white;
+      color: #007b8f;
+      border-radius: 4px;
+      cursor: pointer;
+      font-weight: 600;
+      width: 100%;
+      text-align: center;
+      transition: background-color 0.3s ease;
+    }
+    .btn-detalhes:hover {
+      background-color: #007b8f;
+      color: white;
+    }
+    .reserva-form {
+      flex: 2;
+      background: white;
+      border-radius: 8px;
+      box-shadow: 0 6px 16px rgba(0,0,0,0.1);
+      padding: 2rem;
+      font-family: 'Inter', sans-serif;
+    }
+    .reserva-form h2 {
+      margin-bottom: 1rem;
+      color: #003d4d;
+    }
+    .form-row {
+      display: flex;
+      gap: 1rem;
+      margin-bottom: 1rem;
+    }
+    .form-group {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+    label {
+      font-weight: 600;
+      margin-bottom: 0.3rem;
+      color: #333;
+    }
+    input[type="text"],
+    input[type="email"],
+    select,
+    textarea {
+      padding: 0.5rem;
+      border: 1px solid #cdd5df;
+      border-radius: 4px;
+      font-size: 1rem;
+      background-color: #fafbfd;
+      transition: all 0.3s ease;
+    }
+    input[type="text"]:focus,
+    input[type="email"]:focus,
+    select:focus,
+    textarea:focus {
+      border-color: #007b8f;
+      background-color: #ffffff;
+      box-shadow: 0 0 0 3px rgba(0, 123, 143, 0.3);
+      outline: none;
+    }
+    textarea {
+      resize: vertical;
+      min-height: 100px;
+    }
+    .captcha-container {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .captcha-image {
+      font-family: 'Courier New', Courier, monospace;
+      font-size: 1.5rem;
+      font-weight: bold;
+      letter-spacing: 3px;
+      user-select: none;
+      background: #f0f0f0;
+      padding: 0.3rem 0.6rem;
+      border-radius: 4px;
+      border: 1px solid #ccc;
+    }
+    .refresh-icon {
+      cursor: pointer;
+      color: #007b8f;
+      font-size: 1.2rem;
+    }
+    button[type="submit"] {
+      background-color: #5f8a99;
+      color: white;
+      padding: 0.7rem 1.5rem;
+      border: none;
+      border-radius: 4px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      margin-top: 1rem;
+    }
+    button[type="submit"]:hover {
+      background-color: #3e5c66;
+    }
+    #nome-indicado-group {
+      display: none;
+      margin-top: 1rem;
+    }
+  </style>
+</head>
+<body>
+  <header class="novo-header">
+    <div class="header-container">
+      <div class="logo">BeachFlats Muro Alto</div>
+      <button class="hamburger" aria-label="Abrir menu" aria-expanded="false" aria-controls="mobile-menu">
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+      </button>
+      <nav class="menu" id="mobile-menu" aria-label="Menu principal">
+        <a href="index.html">Início</a>
+        <a href="index.html#quartos">Condomínio</a>
+        <a href="index.html#contato">Contato</a>
+        <a href="#regras">Regras</a>
+        <a href="index.html#avaliação">Avaliações</a>
+      </nav>
+      <a href="Reserva.html" class="btn-cta">Reservar</a>
+    </div>
+  </header>
+
+  <main class="reserva-container">
+    <div class="property-card" aria-label="Detalhes do imóvel">
+      <div class="quarto-carousel">
+        <div class="carousel-images">
+          <img src="img/FullSizeRender 5.JPG" alt="Sala de estar do apartamento" class="carousel-image active" />
+            <img src="img/FullSizeRender 6.JPG" alt="Sala de estar do apartamento" class="carousel-image active" />
+            <img src="img/IMG_1058.JPG" alt="Cozinha equipada" class="carousel-image" />
+            <img src="img/QUARTO1.avif" alt="Quarto 1" class="carousel-image" />
+            <img src="Img/0911162d-ed2f-4b1c-9dc1-7c465d8a1ae2.avif" alt="SUITE" class="carousel-image" />
+            <img src="img/SUITE.jpeg" alt="Quarto 3" class="carousel-image" />
+            <img src="img/FullSizeRender 2.JPG" alt="Banheiro moderno" class="carousel-image" />
+            <img src="Img/6a96d040-e557-42df-86b0-30e4730c6472.webp" alt="Banheiro 2" class="carousel-image" />
+            <img src="Img/varanda.avif" alt="Varanda" class="carousel-image" />
+        </div>
+        <button class="carousel-btn prev-btn"></button>
+        <button class="carousel-btn next-btn">></button>
+      </div>
+      <h3>Muro alto Apartamento</h3>
+      <div class="property-details">
+        <p><i class="fas fa-map-marker-alt"></i>Estrada De Muro Alto - PE 09 Km 009, Ipojuca, PE</p>
+        <p><i class="fas fa-bed"></i> 3 quartos</p>
+        <p><i class="fas fa-bed"></i> 4 camas</p>
+        <p><i class="fas fa-bath"></i> 2 Banheiros</p>
+        <p><i class="fas fa-user"></i> 9 Hóspedes</p>
+      </div>
+      <a href="quarto-detalhes.html" class="btn-detalhes" role="button" type="button">Detalhes</a>
+    </div>
+
+  <form class="reserva-form" aria-label="Formulário de reserva" novalidate method="POST" action="https://formspree.io/f/mayvkwqv">
+      <h2>Faça sua Reserva</h2>
+      <div class="form-row">
+        <div class="form-group">
+          <label for="nome">Nome:</label>
+          <input type="text" id="nome" name="nome" required />
+        </div>
+        <div class="form-group">
+          <label for="como-encontrou">Como você nos encontrou?</label>
+          <select id="como-encontrou" name="como-encontrou" required>
+            <option value="Google" selected>Google</option>
+            <option value="Facebook">Facebook</option>
+            <option value="Instagram">Instagram</option>
+            <option value="Indicação">Indicação</option>
+            <option value="Outro">Outro</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label for="checkin">Check-in:</label>
+          <input type="date" id="checkin" name="checkin" />
+        </div>
+        <div class="form-group">
+          <label for="checkout">Check-out:</label>
+          <input type="date" id="checkout" name="checkout" />
+        </div>
+        <div class="form-group">
+          <label for="hospedes">Hóspedes:</label>
+          <select id="hospedes" name="hospedes">
+            <option value="1">1 hóspede</option>
+            <option value="2">2 hóspedes</option>
+            <option value="3">3 hóspedes</option>
+            <option value="4">4 hóspedes</option>
+            <option value="5">5 hóspedes</option>
+            <option value="6">6 hóspedes</option>
+            <option value="7">7 hóspedes</option>
+            <option value="8">8 hóspedes</option>
+            <option value="9">9 hóspedes</option>
+          </select>
+        </div>
+      </div>
+
+      <div id="nome-indicado-group" class="form-group">
+        <label for="nome-indicado">Nome da pessoa indicada:</label>
+        <input type="text" id="nome-indicado" name="nome-indicado" />
+      </div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label for="telefone">Telefone:</label>
+          <input type="text" id="telefone" name="telefone" placeholder="+55 11 96123-4567" required />
+        </div>
+        <div class="form-group">
+          <label for="contato-preferencia">Como você gostaria de ser contatado?</label>
+          <select id="contato-preferencia" name="contato-preferencia" required>
+            <option value="Whatsapp" selected>Whatsapp</option>
+            <option value="Telefone">Telefone</option>
+            <option value="E-mail">E-mail</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="email">E-mail:</label>
+        <input type="email" id="email" name="email" required />
+      </div>
+
+      <div class="form-group">
+        <label for="captcha">Insira o texto da imagem:</label>
+        <div class="captcha-container">
+          <input type="text" id="captcha" name="captcha" placeholder="Texto da Imagem" required />
+          <span class="captcha-image" aria-label="Captcha">6JgfN8C</span>
+          <i class="fas fa-sync-alt refresh-icon" title="Atualizar Captcha" role="button" tabindex="0"></i>
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label for="adultos">Adultos:</label>
+          <select id="adultos" name="adultos" required>
+            <option value="1" selected>1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="criancas">Crianças:</label>
+          <select id="criancas" name="criancas" required>
+            <option value="0" selected>0</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="complemento">Complemento:</label>
+        <textarea id="complemento" name="complemento" rows="5" required></textarea>
+      </div>
+
+      <button type="submit">Enviar</button>
+    </form>
+  </main>
+
+  <footer class="footer" role="contentinfo">
+    <div class="footer-container">
+      <div class="footer-col footer-logo">
+        <h2>Beach Flats</h2>
+        <p>Seu lugar perfeito para descansar em Porto de Galinhas.</p>
+        <div class="social-icons">
+          <a href="https://www.threads.com/@muroaltoap307?xmt=AQF0FX2O8k08wpVouDW9T2ZXGsZzJ8qTXGXSbVEsJnsKOCk" aria-label="Threads"><i class="fab fa-threads"></i></a>
+          <a href="https://www.instagram.com/muroaltoap307/" aria-label="Instagram"><i class="fab fa-instagram-square"></i></a>
+          <a href="https://www.instagram.com/beachflatstemporada/" aria-label="Instagram"><i class="fab fa-instagram-square"></i></a>
+        </div>
+      </div>
+      <div class="footer-col footer-links" aria-label="Links úteis">
+        <h3>Links Úteis</h3>
+        <ul>
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="#quarto">Condomínio</a></li>
+          <li><a href="Reserva.html">Reservas</a></li>
+          <li><a href="#contato">Contato</a></li>
+          <li><a href="#regras">Regras de acomodação</a></li>
+        </ul>
+      </div>
+      <div class="footer-col footer-pagamento" id="pagamento" aria-label="Formas de pagamento aceitas">
+        <h3>Formas de Pagamento</h3>
+        <ul>
+          <li><img src="Img/icons8-visa-48.png" alt="Visa" /></li>
+          <li><img src="Img/master.png" alt="Mastercard" /></li>
+          <li><img src="Img/DINHEIRO.png" alt="Dinheiro" /></li>
+          <li><img src="Img/PIX.png" alt="PIX" /></li>
+        </ul>
+      </div>
+      <div class="footer-col footer-contato" aria-label="Informações de contato">
+        <h3>Contato</h3>
+        <p><i class="fas fa-phone" aria-hidden="true"></i> <a href="tel:+5581999999999">(81) 99736-2639</a></p>
+        <p><i class="fas fa-phone" aria-hidden="true"></i> <a href="tel:+5581999999999">(81) 99807-0630</a></p>
+        <p><i class="fas fa-envelope" aria-hidden="true"></i> <a href="mailto:dani.tst28@gmail.com">dani.tst28@gmail.com</a></p>
+        <p><i class="fas fa-map-marker-alt" aria-hidden="true"></i> Estrada De Muro Alto - PE 09 Km 009, Ipojuca, PE</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 Beach Flats. Todos os direitos reservados.</p>
+      <p>Desenvolvido por <a href="https://www.instagram.com/jm_marketingoficial/" target="_blank" rel="noopener">Jm Marketing Digital</a></p>
+    </div>
+  </footer>
+
+   <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+<script src="https://cdn.jsdelivr.net/npm/flatpickr/dist/l10n/pt.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    // 1. Capturar parâmetros da URL
+    const urlParams = new URLSearchParams(window.location.search);
+    const checkinParam = urlParams.get('checkin');
+    const checkoutParam = urlParams.get('checkout');
+    const hospedesParam = urlParams.get('hospedes');
+
+    // 2. Preencher os campos do formulário se os parâmetros existirem
+    if (checkinParam) {
+      document.getElementById('checkin').value = checkinParam;
+    }
+    if (checkoutParam) {
+      document.getElementById('checkout').value = checkoutParam;
+    }
+    if (hospedesParam) {
+      document.getElementById('hospedes').value = hospedesParam;
+      document.getElementById('adultos').value = hospedesParam > 9 ? 9 : hospedesParam;
+    }
+
+    // 3. Validar se os dados essenciais estão presentes
+    if (!checkinParam || !checkoutParam || !hospedesParam) {
+      alert('Dados incompletos da reserva. Por favor, selecione novamente as datas e número de hóspedes.');
+      window.location.href = 'quarto-detalhes.html';
+    }
+
+    // 4. Configurar o envio do formulário
+    const reservaForm = document.querySelector('.reserva-form');
+    if (reservaForm) {
+      reservaForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+
+        // Coletar todos os dados do formulário
+        const formData = {
+          nome: document.getElementById('nome').value,
+          checkin: document.getElementById('checkin').value,
+          checkout: document.getElementById('checkout').value,
+          hospedes: document.getElementById('hospedes').value,
+          telefone: document.getElementById('telefone').value,
+          email: document.getElementById('email').value,
+          adultos: document.getElementById('adultos').value,
+          criancas: document.getElementById('criancas').value,
+          complemento: document.getElementById('complemento').value
+        };
+
+        // Validar campos obrigatórios
+        if (!formData.nome || !formData.telefone || !formData.email) {
+          alert('Por favor, preencha todos os campos obrigatórios.');
+          return;
+        }
+
+        // Formatando mensagem para WhatsApp
+        const message = `*Nova Pré-Reserva*%0A%0AObrigado por reservar conosco!%0A%0A` +
+                        `*Nome:* ${encodeURIComponent(formData.nome)}%0A` +
+                        `*Check-in:* ${encodeURIComponent(formData.checkin)}%0A` +
+                        `*Check-out:* ${encodeURIComponent(formData.checkout)}%0A` +
+                        `*Hóspedes:* ${encodeURIComponent(formData.hospedes)} (${formData.adultos} adultos, ${formData.criancas} crianças)%0A` +
+                        `*Telefone:* ${encodeURIComponent(formData.telefone)}%0A` +
+                        `*E-mail:* ${encodeURIComponent(formData.email)}%0A%0A` +
+                        `*Observações:*%0A${encodeURIComponent(formData.complemento)}`;
+
+        // Números de WhatsApp
+        const whatsappResponsavel = '+5581998070630'; 
+        const whatsappCliente = formData.telefone.replace(/\D/g, '');
+
+        // Enviar para o responsável
+        window.open(`https://wa.me/${whatsappResponsavel}?text=${message}`, '_blank');
+
+        // Feedback para o usuário
+        alert("Reserva enviada com sucesso! Você receberá uma confirmação por WhatsApp.");
+      });
+    }
+
+    // 5. Mostrar campo de indicação se selecionado
+    document.getElementById('como-encontrou').addEventListener('change', function() {
+      const indicacaoGroup = document.getElementById('nome-indicado-group');
+      indicacaoGroup.style.display = this.value === 'Indicação' ? 'block' : 'none';
+    });
+
+    // 6. Configurar máscara para telefone
+    document.getElementById('telefone').addEventListener('input', function(e) {
+      let value = e.target.value.replace(/\D/g, '');
+      if (value.length > 2) {
+        value = `(${value.substring(0,2)}) ${value.substring(2)}`;
+      }
+      if (value.length > 10) {
+        value = `${value.substring(0,10)}-${value.substring(10,14)}`;
+      }
+      e.target.value = value;
+    });
+  });
+</script>
+  <script src="script.js"></script>
+</body>
+</html>

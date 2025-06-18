@@ -1,0 +1,254 @@
+/* Cores atualizadas para quarto-detalhes.html */
+body {
+  font-family: 'Inter', sans-serif;
+  background: #f7f9fc; /* Fundo mais suave */
+  box-sizing: border-box;
+  color: #333;
+  margin: 0;
+  padding: 0;
+}
+
+/* Header responsivo */
+.novo-header {
+  background-color: #fff;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+  padding: 1rem 2rem;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.logo {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #007b8f;
+  margin-right: 1rem;
+}
+
+.menu {
+  display: flex;
+  flex: 1;
+  justify-content: center;
+}
+
+.menu a {
+  margin: 0 1rem;
+  padding: 0.5rem 0;
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.menu a:hover {
+  color: #007b8f;
+}
+
+.btn-cta {
+  background-color: #007b8f;
+  color: white;
+  padding: 0.6rem 1.2rem;
+  border-radius: 8px;
+  font-weight: bold;
+  white-space: nowrap;
+}
+
+.btn-cta:hover {
+  background-color: #005f6b;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.detalhes-container {
+  display: flex;
+  gap: 2rem;
+  width: 100%;
+  flex-wrap: wrap;
+}
+
+.quarto-detalhes-content {
+  flex: 2;
+  min-width: 300px;
+}
+
+.carousel-container {
+  position: relative;
+  height: 400px;
+}
+
+.carousel-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.carousel-image.active {
+  opacity: 1;
+  z-index: 1;
+}
+
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  background-color: rgba(0,0,0,0.3);
+  border: none;
+  color: white;
+  font-size: 2rem;
+  padding: 0 0.5rem;
+  cursor: pointer;
+  transform: translateY(-50%);
+  border-radius: 3px;
+  user-select: none;
+  z-index: 10;
+}
+
+.prev-btn {
+  left: 10px;
+}
+
+.next-btn {
+  right: 10px;
+}
+
+.quarto-info {
+  background: #ffffff;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  margin-top: 1rem;
+}
+
+.quarto-info h2 {
+  margin-top: 0;
+  font-weight: 600;
+  font-size: 1.8rem;
+  color: #035e6b; /* Tom mais escuro para títulos */
+}
+
+.quarto-icons {
+  display: flex;
+  gap: 1.5rem;
+  margin: 1rem 0;
+  flex-wrap: wrap;
+  color: #007b8f; /* Cor principal */
+  font-weight: 600;
+}
+
+.quarto-icons span i {
+  margin-right: 0.3rem;
+}
+
+.descricao-detalhada p {
+  line-height: 1.5;
+  margin-bottom: 1rem;
+}
+
+/* Formulário de reserva fixo */
+aside.booking-section {
+  position: sticky;
+  top: 20px;
+  flex: 1;
+  background: #ffffff;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  height: fit-content;
+  min-width: 280px;
+  border: 1px solid #e0e0e0;
+  z-index: 100;
+  transition: all 0.3s ease;
+}
+
+/* Melhorias no formulário */
+.preco-reserva {
+  text-align: center;
+  font-weight: 700;
+  font-size: 1.8rem;
+  color: #007b8f;
+  margin: 1rem 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.preco-reserva small {
+  font-size: 0.9rem;
+  color: #666;
+  font-weight: 500;
+}
+
+.form-reserva {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.form-reserva label {
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: #444;
+  display: block;
+  margin-bottom: 0.3rem;
+}
+
+.form-reserva input,
+.form-reserva select {
+  padding: 0.8rem;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 1rem;
+  width: 100%;
+  background-color: #fafafa;
+  transition: all 0.3s ease;
+}
+
+.form-reserva input:focus,
+.form-reserva select:focus {
+  border-color: #2a9d8f;
+  background-color: #fff;
+  box-shadow: 0 0 0 3px rgba(42, 157, 143, 0.1);
+  outline: none;
+}
+
+.btn-email {
+  background-color: #007b8f !important;
+  color: white !important;
+  border: none !important;
+  padding: 1rem 1.5rem !important;
+  border-radius: 8px !important;
+  cursor: pointer !important;
+  font-weight: 700 !important;
+  font-size: 1.1rem !important;
+  transition: all 0.3s ease !important;
+  margin-top: 0.5rem !important;
+  /* Removed uppercase to match photo */
+  text-transform: none !important;
+  letter-spacing: 0.5px !important;
+}
+
+.btn-email:hover {
+  background-color: #005f6b !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1) !important;
+}
+
+/* Other styles unchanged */

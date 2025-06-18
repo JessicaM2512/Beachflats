@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Regras da Acomodação - BeachFlats Muro Alto</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="icon" href="Img/favicon.ico" type="image/x-icon">
+  <!-- Para Apple/Safari -->
+  <link rel="apple-touch-icon" sizes="180x180" href="Img/favicon.ico">
+
+  <!-- Para Android/Chrome -->
+  <link rel="icon" type="image/png" sizes="192x192" href="Img/favicon.ico">
+
+  <!-- Para Windows Metro -->
+  <meta name="msapplication-TileImage" content="cImg/favicon.ico">
+  <meta name="msapplication-TileColor" content="#007b8f">
+  <link rel="shortcut icon" href="Img/favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <style>
+    /* Reset e estilos base */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Inter', sans-serif;
+      transition: all 0.3s ease;
+    }
+
+    body {
+      background-color: #f7f9fc;
+      color: #333;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    /* Header */
+    .novo-header {
+      background-color: #fff;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+      padding: 1rem 2rem;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .header-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 1200px;
+      margin: 0 auto;
+      flex-wrap: wrap;
+    }
+
+    .logo {
+      font-size: 1.8rem;
+      font-weight: bold;
+      color: #007b8f;
+      margin-right: 1rem;
+    }
+
+    .menu {
+      display: flex;
+      flex: 1;
+      justify-content: center;
+    }
+
+    .menu a {
+      margin: 0 1rem;
+      padding: 0.5rem 0;
+      text-decoration: none;
+      color: #333;
+      font-weight: 500;
+      white-space: nowrap;
+    }
+
+    .menu a:hover {
+      color: #007b8f;
+    }
+
+    .btn-cta {
+      background-color: #007b8f;
+      color: white;
+      padding: 0.6rem 1.2rem;
+      border-radius: 8px;
+      font-weight: bold;
+      white-space: nowrap;
+      text-decoration: none;
+    }
+
+    .btn-cta:hover {
+      background-color: #005f6b;
+    }
+
+    /* Conteúdo principal */
+    main {
+      max-width: 1200px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+    }
+
+    /* Seção de regras */
+    .regras-container {
+      background: white;
+      border-radius: 16px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+      padding: 3rem;
+      margin-bottom: 2rem;
+      transition: box-shadow 0.3s ease;
+    }
+
+    .regras-container:hover {
+      box-shadow: 0 12px 28px rgba(0, 0, 0, 0.1);
+    }
+
+    .regras-header {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+
+    .regras-header h1 {
+      font-size: 2.2rem;
+      color: #035e6b;
+      margin-bottom: 1rem;
+    }
+
+    .regras-header p {
+      font-size: 1.1rem;
+      color: #555;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .regras-section {
+      margin-bottom: 3rem;
+    }
+
+    .regras-section h2 {
+      color: #035e6b;
+      font-size: 1.8rem;
+      margin-bottom: 1.5rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 2px solid #e0e0e0;
+    }
+
+    .regras-list {
+      list-style-type: none;
+      padding: 0;
+    }
+
+    .regras-list li {
+      margin-bottom: 1rem;
+      padding-left: 1.5rem;
+      position: relative;
+      font-size: 1rem;
+    }
+
+    .regras-list li:before {
+      content: "•";
+      color: #007b8f;
+      font-weight: bold;
+      position: absolute;
+      left: 0;
+    }
+
+    .regras-aviso {
+      background: #fff8e1;
+      padding: 1.5rem;
+      border-left: 4px solid #ffc107;
+      margin: 2rem 0;
+      border-radius: 0 8px 8px 0;
+    }
+
+    .regras-aviso p {
+      margin: 0;
+      font-weight: 600;
+      color: #333;
+    }
+
+    /* Footer */
+    .footer {
+      background: #0a0a0a;
+      color: #fff;
+      padding: 60px 20px 30px;
+      font-family: 'Inter', sans-serif;
+    }
+
+    .footer-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 40px;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .footer h2, .footer h3 {
+      margin-bottom: 16px;
+      font-weight: 600;
+      color: #ffffff;
+    }
+
+    .footer p, .footer li, .footer a {
+      color: #cccccc;
+      font-size: 14px;
+      line-height: 1.6;
+    }
+
+    .footer a:hover {
+      color: #ffffff;
+      text-decoration: underline;
+    }
+
+    .footer-col ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .footer-col ul li {
+      margin-bottom: 10px;
+    }
+
+    .footer-pagamento ul {
+      display: flex;
+      gap: 1rem;
+      align-items: center;
+    }
+
+    .footer-pagamento ul li img {
+      width: 40px;
+      height: auto;
+    }
+
+    .social-icons a {
+      display: inline-block;
+      margin-right: 10px;
+      color: #fff;
+      font-size: 18px;
+      transition: transform 0.3s ease;
+    }
+
+    .social-icons a:hover {
+      transform: scale(1.2);
+    }
+
+    .footer-bottom {
+      text-align: center;
+      margin-top: 40px;
+      font-size: 13px;
+      border-top: 1px solid #333;
+      padding-top: 20px;
+    }
+
+    /* Responsividade */
+    @media (max-width: 768px) {
+      .novo-header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      
+      .menu {
+        margin-top: 1rem;
+        width: 100%;
+        flex-wrap: wrap;
+      }
+      
+      .menu a {
+        margin: 0 0.5rem 0.5rem 0;
+      }
+      
+      .regras-container {
+        padding: 2rem 1.5rem;
+      }
+      
+      .regras-header h1 {
+        font-size: 1.8rem;
+      }
+      
+      .footer-container {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+      
+      .social-icons {
+        justify-content: center;
+      }
+      
+      .footer-pagamento ul {
+        justify-content: center;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="novo-header">
+    <div class="header-container">
+      <div class="logo">BeachFlats Muro Alto</div>
+      <button class="hamburger" aria-label="Abrir menu" aria-expanded="false" aria-controls="mobile-menu">
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+      </button>
+      <nav class="menu" id="mobile-menu" aria-label="Menu principal">
+        <a href="index.html">Home</a>
+        <a href="index.html#quartos">Apartamento</a>
+        <a href="Reserva.html">Reservas</a>
+        <a href="index.html#contato">Contato</a>
+        <a href="#regras">Regras</a>
+        <a href="index.html#avaliação">Avaliações</a>
+      </nav>
+      <a href="Reserva.html" class="btn-cta">Reservar</a>
+    </div>
+  </header>
+
+  <main>
+    <div class="regras-container">
+      <div class="regras-header">
+        <h1>Regras da Acomodação</h1>
+        <p>Seja muito bem-vindo(a) ao Beach Flats! Para garantir que todos possam desfrutar de uma estadia confortável e agradável, pedimos que você observe algumas regras simples durante a locação.</p>
+      </div>
+      
+      <div class="regras-section" id="regras">
+        <h2>REGRAS DO CONDOMÍNIO</h2>
+        <ul class="regras-list">
+          <li>Não utilizar, nos ambientes das piscinas, utensílios de vidro</li>
+          <li>Não utilizar equipamento de som nas áreas comuns</li>
+          <li>Não é permitida a utilização de churrasqueira ou fazer churrasco nas áreas comuns</li>
+          <li>Não entrar com comida ou bebida nas piscinas</li>
+          <li>Não pendurar roupas ou qualquer utensílio de pano ou plástico nos parapeitos da varanda ou em qualquer das janelas do apartamento, podendo ser utilizado o varal, quando necessário</li>
+          <li>Os veículos devem ser estacionados exclusivamente nas vagas destinadas ao estacionamento e ocupar apenas uma vaga</li>
+          <li>Os hóspedes só poderão transitar no ambiente do condomínio portando pulseira de identificação, a ser fornecida na recepção</li>
+          <li>Respeitar o horário de silêncio, especialmente entre as 22h e as 8h</li>
+        </ul>
+        
+        <div class="regras-aviso">
+          <p>A DESOBEDIÊNCIA A ALGUMA DAS REGRAS DO CONDOMÍNIO CITADAS ACIMA PODERÁ RESULTAR EM MULTA A SER ARBITRADA PELO CONDOMÍNIO.</p>
+        </div>
+      </div>
+      
+      <div class="regras-section">
+        <h2>REGRAS DA ACOMODAÇÃO</h2>
+        <ul class="regras-list">
+          <li>O check-in deverá ser feito na recepção do condomínio</li>
+          <li>Ter o cuidado de não sentar nas camas com o corpo molhado ou com utilização de protetor solar ou bronzeadores, evitando assim a presença de manchas nos lençóis e/ou toalhas</li>
+          <li>Ao final da hospedagem, caberá ao hóspede depositar o lixo, de cozinha e banheiro, nas lixeiras existentes nas saídas dos blocos, no andar térreo</li>
+          <li>Caberá ao hóspede manter os utensílios de cozinha (talheres, pratos, panelas etc), a geladeira e o fogão devidamente limpos</li>
+          <li>Não é permitida a utilização de churrasqueira no ambiente do apartamento</li>
+          <li>Não exceder o limite de pessoas acordado no momento da reserva. O imóvel só comporta este quantitativo</li>
+          <li>Caso ocorra algum incidente que cause danos ou quebra de algum móvel ou utensílio, comunique-nos imediatamente, para que possamos resolver da melhor forma possível</li>
+          <li>Ao sair, certifique-se de trancar todas as portas e janelas, apagar as luzes e ar condicionados</li>
+          <li>O Check-out deverá ser feito na recepção do condomínio</li>
+        </ul>
+        
+        <div class="regras-aviso">
+          <p>A DESOBEDIÊNCIA A ALGUMA DAS REGRAS DA ACOMODAÇÃO CITADAS ACIMA PODERÁ RESULTAR EM REGISTRO NO CADASTRO DO HÓSPEDE.</p>
+        </div>
+        
+        <p>Antes do check-out, certifique-se de estar retirando todos os seus pertences do imóvel, pois não nos responsabilizamos por objetos deixados no apartamento.</p>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-col footer-logo">
+        <h2>Beach Flats</h2>
+        <p>Seu lugar perfeito para descansar em Porto de Galinhas.</p>
+        <div class="social-icons">
+          <a href="https://www.threads.com/@muroaltoap307?xmt=AQF0FX2O8k08wpVouDW9T2ZXGsZzJ8qTXGXSbVEsJnsKOCk" aria-label="Threads"><i class="fab fa-threads"></i></a>
+          <a href="https://www.instagram.com/muroaltoap307/" aria-label="Instagram"><i class="fab fa-instagram-square"></i></a>
+          <a href="https://www.instagram.com/beachflatstemporada/" aria-label="Instagram"><i class="fab fa-instagram-square"></i></a>
+        </div>
+      </div>
+      <div class="footer-col footer-links">
+        <h3>Links Úteis</h3>
+        <ul>
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="#quarto">Condomínio</a></li>
+          <li><a href="Reserva.html">Reservas</a></li>
+          <li><a href="#contato">Contato</a></li>
+          <li><a href="#regras">Regras de acomodação</a></li>
+        </ul>
+      </div>
+      <div class="footer-col footer-pagamento">
+        <h3>Formas de Pagamento</h3>
+        <ul>
+          <li><img src="Img/icons8-visa-48.png" alt="Visa" /></li>
+          <li><img src="Img/master.png" alt="Mastercard" /></li>
+          <li><img src="Img/DINHEIRO.png" alt="Dinheiro" /></li>
+          <li><img src="Img/PIX.png" alt="PIX" /></li>
+        </ul>
+      </div>
+      <div class="footer-col footer-contato">
+        <h3>Contato</h3>
+        <p><i class="fas fa-phone"></i> <a href="tel:+5581997362639">(81) 99736-2639</a></p>
+        <p><i class="fas fa-phone"></i> <a href="tel:+5581998070630">(81) 99807-0630</a></p>
+        <p><i class="fas fa-envelope"></i> <a href="mailto:dani.tst28@gmail.com">dani.tst28@gmail.com</a></p>
+        <p><i class="fas fa-map-marker-alt"></i> Estrada De Muro Alto - PE 09 Km 009, Ipojuca, PE</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 Beach Flats. Todos os direitos reservados.</p>
+      <p>Desenvolvido por <a href="https://www.instagram.com/jm_marketingoficial/" target="_blank" rel="noopener">Jm Marketing Digital</a></p>
+    </div>
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html>
