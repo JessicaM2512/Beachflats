@@ -65,7 +65,7 @@ function initCarousel(carouselContainer) {
 // WhatsApp floating button
 function createWhatsAppButton() {
   const whatsappBtn = document.createElement('a');
-  whatsappBtn.href = 'https://wa.me/5581985882547';
+  whatsappBtn.href = 'https://wa.me/5581997362639';
   whatsappBtn.target = '_blank';
   whatsappBtn.rel = 'noopener noreferrer';
   whatsappBtn.className = 'whatsapp-float';
