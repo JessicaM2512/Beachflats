@@ -99,31 +99,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // Botão do WhatsApp
-  createWhatsAppButton();
-
-  // Botão "Voltar ao Topo"
-  const backToTopBtn = document.createElement('button');
-  backToTopBtn.className = 'back-to-top';
-  backToTopBtn.setAttribute('aria-label', 'Voltar ao topo');
-  backToTopBtn.innerHTML = '<i class="fas fa-chevron-up"></i>';
-  document.body.appendChild(backToTopBtn);
-
-  backToTopBtn.addEventListener('click', () => {
-    window.scrollTo({
-      top: 0,
-      behavior: 'smooth'
-    });
-  });
-
-  window.addEventListener('scroll', () => {
-    if (window.scrollY > 300) {
-      backToTopBtn.classList.add('show');
-    } else {
-      backToTopBtn.classList.remove('show');
-    }
-  });
-
   // Hamburger menu toggle
   const hamburger = document.querySelector('.hamburger');
   const mobileMenu = document.getElementById('mobile-menu');
