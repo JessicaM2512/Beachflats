@@ -20,10 +20,10 @@
     <meta name="msapplication-TileImage" content="cImg/favicon.ico">
     <meta name="msapplication-TileColor" content="#007b8f">
     <link rel="shortcut icon" href="Img/favicon.ico" type="image/x-icon">
-</head>
-<body>
-  <header class="novo-header" role="banner">
-    <div class="header-container">
+  </head>
+  <body>
+    <header class="novo-header" role="banner">
+      <div class="header-container">
       <div class="logo">BeachFlats Muro Alto</div>
       <button class="hamburger" aria-label="Abrir menu" aria-expanded="false" aria-controls="mobile-menu">
         <span class="hamburger-line"></span>
@@ -31,17 +31,17 @@
         <span class="hamburger-line"></span>
       </button>
       <nav class="menu" id="mobile-menu" aria-label="Menu principal">
-        <a href="index.html">Início</a>
-        <a href="index.html#quartos">Condomínio</a>
+        <a href="index.html">Home</a>
+        <a href="index.html#quartos">Apartamento</a>
         <a href="Reserva.html">Reservas</a>
         <a href="index.html#contato">Contato</a>
-        <a href="#regras">Regras</a>
+        <a href="regras.html">Regras</a>
         <a href="index.html#avaliação">Avaliações</a>
       </nav>
-      <a href="Reserva.html" class="btn-cta">Reservar</a>
-    </div>
-  </header>
-    <script>
+        <a href="Reserva.html" class="btn-cta">Reservar</a>
+      </div>
+    </header>
+      <script>
       document.addEventListener('DOMContentLoaded', function() {
         function getQueryParams() {
           const params = {};
@@ -70,6 +70,8 @@
             url.searchParams.set('checkout', checkout);
             url.searchParams.set('hospedes', hospedes);
             console.log('Redirecting to:', url.toString());
+            // Additional debug log before redirect
+            console.log('About to redirect to Reserva.html with params');
             window.location.assign(url.toString());
           } else {
             console.log('Missing reservation data, cannot redirect');
@@ -81,43 +83,43 @@
         }
       });
     </script>
-  </header>
-
-  <main class="container" role="main">
-    <div class="detalhes-container">
-      <article class="quarto-detalhes-content">
-        <!-- Carrossel de Imagens -->
-        <div class="carousel-container" aria-label="Galeria de imagens do apartamento">
-          <button class="carousel-btn prev-btn" aria-label="Imagem anterior">&#10094;</button>
-          <div class="carousel-images">
-            <img src="img/FullSizeRender 5.JPG" alt="Sala de estar do apartamento" class="carousel-image active" />
-            <img src="img/FullSizeRender 6.JPG" alt="Sala de estar do apartamento" class="carousel-image active" />
-            <img src="img/IMG_1058.JPG" alt="Cozinha equipada" class="carousel-image" />
-            <img src="img/QUARTO1.avif" alt="Quarto 1" class="carousel-image" />
-            <img src="Img/0911162d-ed2f-4b1c-9dc1-7c465d8a1ae2.avif" alt="SUITE" class="carousel-image" />
-            <img src="img/SUITE.jpeg" alt="Quarto 3" class="carousel-image" />
-            <img src="img/FullSizeRender 2.JPG" alt="Banheiro moderno" class="carousel-image" />
-            <img src="Img/6af7e51d-174d-4e83-b242-fe7d87dd2af4.avif" alt="Banheiro 2" class="carousel-image" />
-            <img src="Img/varanda.avif" alt="Varanda" class="carousel-image" />
+    <main class="container" role="main">
+      <div class="detalhes-container">
+        <article class="quarto-detalhes-content">
+          <!-- Carrossel de Imagens -->
+          <div class="carousel-container" aria-label="Galeria de imagens do apartamento">
+            <button class="carousel-btn prev-btn" aria-label="Imagem anterior">&#10094;</button>
+            <div class="carousel-images">
+              <img src="img/FullSizeRender 5.JPG" alt="Sala de estar do apartamento" class="carousel-image active" />
+              <img src="img/FullSizeRender 6.JPG" alt="Sala de estar do apartamento" class="carousel-image active" />
+              <img src="img/IMG_1058.JPG" alt="Cozinha equipada" class="carousel-image" />
+              <img src="img/QUARTO1.avif" alt="Quarto 1" class="carousel-image" />
+              <img src="Img/0911162d-ed2f-4b1c-9dc1-7c465d8a1ae2.avif" alt="SUITE" class="carousel-image" />
+              <img src="img/SUITE.jpeg" alt="Quarto 3" class="carousel-image" />
+              <img src="img/FullSizeRender 2.JPG" alt="Banheiro moderno" class="carousel-image" />
+              <img src="Img/6af7e51d-174d-4e83-b242-fe7d87dd2af4.avif" alt="Banheiro 2" class="carousel-image" />
+              <img src="Img/varanda.avif" alt="Varanda" class="carousel-image" />
+            </div>
+            <button class="carousel-btn next-btn" aria-label="Próxima imagem">&#10095;</button>
           </div>
-          <button class="carousel-btn next-btn" aria-label="Próxima imagem">&#10095;</button>
-        </div>
 
-        <!-- Informações do Apartamento -->
-        <section class="quarto-info" aria-label="Informações do apartamento">
-          <h1>Apartamento Completo em Porto de Galinhas</h1>
-          
-          <div class="quarto-icons" aria-label="Características do apartamento">
-            <span><i class="fas fa-home"></i> Apartamento inteiro</span>
-            <span><i class="fas fa-bed"></i> 3 quartos</span>
-            <span><i class="fas fa-user-friends"></i> Até 9 hóspedes</span>
-            <span><i class="fas fa-bath"></i> 2 banheiro</span>
-          </div>
-          
-          <div class="descricao-detalhada">
-            <p>Flat para até 10 pessoas no total já incluindo crianças, condomínio resort fechado, piscina com 2,500 m² de lâmina de d’água, parque aquático, com deck, prainha, ilhas, e bar-cascata. Além de campo de futebol, gazebo, salão de jogos, sauna, parque infantil, churrasqueira que pode ser locada para uso direto com a recepção do condomínio e restaurante. Condomínio com amplo estacionamento, vaga de um carro por hóspede.</p>
+          <!-- Informações do Apartamento -->
+          <section class="quarto-info" aria-label="Informações do apartamento">
+            <h1>Apartamento Completo em Porto de Galinhas</h1>
             
-            <h3>O espaço</h3>
+            <div class="quarto-icons" aria-label="Características do apartamento">
+              <span><i class="fas fa-home"></i> Apartamento Mobiliado</span>
+              <span><i class="fas fa-bed"></i> 3 quartos</span>
+              <span><i class="fas fa-user-friends"></i> Até 9 hóspedes</span>
+              <span><i class="fas fa-bath"></i> 2 banheiro</span>
+            </div>
+            
+            <div class="descricao-detalhada">
+              <p>Flat para até 9 pessoas no total já incluindo crianças, condomínio resort fechado, piscina com 2,500 m² de lâmina de d’água, parque aquático, com deck, prainha, ilhas, e bar-cascata. Além de campo de futebol, gazebo, salão de jogos, sauna, parque infantil, churrasqueira que pode ser locada para uso direto com a recepção do condomínio e restaurante.
+                Condomínio com amplo estacionamento, vaga de um carro por hóspede.</p>
+                <p>Localizado na estrada de Porto de Galinhas, com fácil acesso de 1km as praia de Muro Alto, Cupe e a 5 minutos de carro para o centro Porto de Galinhas!</p>
+              
+              <h3>O espaço</h3>
             <p>Nosso apartamento foi recentemente reformado e conta com:</p>
             <ul>
               <li>Sala de estar ampla com sofá e mesa de jantar</li>
@@ -257,7 +259,7 @@
             </select>
           </div>
           
-          <button type="submit" class="btn-email">Reservar</button>
+           <button type="submit" class="btn-email">Reservar</button>
         </form>
         
         <div class="info-adicional">
@@ -267,6 +269,14 @@
       </aside>
     </div>
   </main>
+   <a href="https://wa.me/558198070630?text=Olá, vim%20pelo%20site,%20gostaria%20de%20informações%20sobre%20hospedagem." target="_blank" rel="noopener noreferrer" class="whatsapp-float" aria-label="Fale conosco pelo WhatsApp">
+    <img src="img/whatsapp.png" alt="WhatsApp" width="70" height="70" />
+    <span class="sr-only">WhatsApp</span>
+  </a>
+  <button class="back-to-top" aria-label="Voltar ao topo" tabindex="0" type="button">
+    <i class="fas fa-chevron-up" aria-hidden="true"></i>
+  </button>
+
   <footer class="footer" role="contentinfo">
     <div class="footer-container">
       <div class="footer-col footer-logo">
@@ -312,50 +322,51 @@
   </footer>
 
   <script>
-  // Captura parâmetros da URL
-  function getQueryParams() {
-    const params = {};
-    const queryString = window.location.search.substring(1);
-    const pairs = queryString.split('&');
-    
-    pairs.forEach(pair => {
-      const [key, value] = pair.split('=');
-      if (key) params[decodeURIComponent(key)] = decodeURIComponent(value || '');
-    });
-    
-    return params;
-  }
-
-  // Preenche formulário com dados da URL
-  document.addEventListener('DOMContentLoaded', function() {
-    const params = getQueryParams();
-    
-    if (params.checkin) {
-      document.getElementById('checkin').value = params.checkin;
-    }
-    if (params.checkout) {
-      document.getElementById('checkout').value = params.checkout;
-    }
-    if (params.hospedes) {
-      document.getElementById('hospedes').value = params.hospedes;
+    // Captura parâmetros da URL
+    function getQueryParams() {
+      const params = {};
+      const queryString = window.location.search.substring(1);
+      const pairs = queryString.split('&');
+      
+      pairs.forEach(pair => {
+        const [key, value] = pair.split('=');
+        if (key) params[decodeURIComponent(key)] = decodeURIComponent(value || '');
+      });
+      
+      return params;
     }
 
-    // Configura envio do formulário
-    document.getElementById('formReserva').addEventListener('submit', function(e) {
-      e.preventDefault();
+    // Preenche formulário com dados da URL
+    document.addEventListener('DOMContentLoaded', function() {
+      const params = getQueryParams();
       
-      const checkin = document.getElementById('checkin').value;
-      const checkout = document.getElementById('checkout').value;
-      const hospedes = document.getElementById('hospedes').value;
-      
-      if (checkin && checkout && hospedes) {
-        window.location.href = `Reserva.html?checkin=${checkin}&checkout=${checkout}&hospedes=${hospedes}`;
-      } else {
-        alert('Por favor, preencha todos os campos.');
+      if (params.checkin) {
+        document.getElementById('checkin').value = params.checkin;
       }
+      if (params.checkout) {
+        document.getElementById('checkout').value = params.checkout;
+      }
+      if (params.hospedes) {
+        document.getElementById('hospedes').value = params.hospedes;
+      }
+
+      // Configura envio do formulário
+      document.getElementById('formReserva').addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        const checkin = document.getElementById('checkin').value;
+        const checkout = document.getElementById('checkout').value;
+        const hospedes = document.getElementById('hospedes').value;
+        
+        if (checkin && checkout && hospedes) {
+          window.location.href = `Reserva.html?checkin=${checkin}&checkout=${checkout}&hospedes=${hospedes}`;
+        } else {
+          alert('Por favor, preencha todos os campos.');
+        }
+      });
     });
-  });
-</script>
-  <script src="script.js"></script>
-</body>
+  </script>
+    <script src="script.js"></script>
+    <script src="quarto-detalhes-fix.js"></script>
+  </body>
 </html>
