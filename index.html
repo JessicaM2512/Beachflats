@@ -33,10 +33,10 @@
       </button>
       <nav class="menu" id="mobile-menu" aria-label="Menu principal">
         <a href="index.html">Home</a>
-        <a href="index.html#quartos">Apartamento</a>
+        <a href="quarto-detalhes.html">Condomínio</a>
         <a href="Reserva.html">Reservas</a>
         <a href="index.html#contato">Contato</a>
-        <a href="#regras">Regras</a>
+        <a href="regras.html">Regras</a>
         <a href="index.html#avaliação">Avaliações</a>
       </nav>
       <a href="Reserva.html" class="btn-cta">Reservar</a>
@@ -284,12 +284,8 @@
         <p>Estamos disponíveis para atender você.</p>
         <div class="info-item">
           <div class="icon"><i class="fas fa-phone" aria-hidden="true"></i></div>
-          <div><p><a href="tel:+55819997362639">(81) 99736-2639</a></p></div>
-          <div><p><a href="tel:+5581998070630">(81) 99807-0630</a></p></div>
-        </div>
-        <div class="info-item">
-          <div class="icon"><i class="fas fa-envelope" aria-hidden="true"></i></div>
-          <div><p><a href="mailto:dani.tst28@gmail.com">dani.tst28@gmail.com</a></p></div>
+          <div><p><a href="tel:+55819997362639">(81) 99736-2639</a> - Jonatas</p></div>
+          <div><p><a href="tel:+5581998070630">(81) 99807-0630</a> - Danielle</p></div>
         </div>
         <div class="info-item">
           <div class="icon"><i class="fas fa-map-marker-alt" aria-hidden="true"></i></div>
@@ -394,21 +390,22 @@
     });
 
     // 2. Back to Top Button
-    const backToTop = document.querySelector('.back-to-top');
-    if (backToTop) {
-      window.addEventListener('scroll', () => {
-        if (window.scrollY > 300) {
-          backToTop.classList.add('show');
-        } else {
-          backToTop.classList.remove('show');
-        }
-      });
-      
-      backToTop.addEventListener('click', () => {
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-      });
-    }
+    const backToTopBtn = document.getElementById("backToTop");
 
+    window.addEventListener("scroll", () => {
+    if (window.pageYOffset > 300) {
+      backToTopBtn.classList.add("show");
+    } else {
+      backToTopBtn.classList.remove("show");
+    }
+  });
+
+    backToTopBtn.addEventListener("click", () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    });
+   });
     // 3. Multiple Image Carousels
     const carousels = document.querySelectorAll('.quarto-carousel');
     
@@ -467,7 +464,7 @@
     // 4. WhatsApp Button (se necessário)
     if (!document.querySelector('.whatsapp-float')) {
       const whatsappBtn = document.createElement('a');
-      whatsappBtn.href = 'https://wa.me/5581985882547';
+      whatsappBtn.href = 'https://wa.me/5581998070630';
       whatsappBtn.className = 'whatsapp-float';
       whatsappBtn.innerHTML = '<img src="Img/whatsapp.png" alt="WhatsApp">';
       document.body.appendChild(whatsappBtn);
