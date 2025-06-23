@@ -59,3 +59,63 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   }
 });
+function initCarousel(carouselContainer) {
+  const images = carouselContainer.querySelectorAll('.carousel-image');
+  const prevBtn = carouselContainer.querySelector('.prev-btn');
+  const nextBtn = carouselContainer.querySelector('.next-btn');
+  let currentIndex = 0;
+  let autoSlideInterval;
+
+  function showImage(index) {
+    images.forEach((img, i) => {
+      img.classList.toggle('active', i === index);
+    });
+  }
+
+  function goToPrev() {
+    currentIndex = (currentIndex - 1 + images.length) % images.length;
+    showImage(currentIndex);
+    resetAutoSlide();
+  }
+
+  function goToNext() {
+    currentIndex = (currentIndex + 1) % images.length;
+    showImage(currentIndex);
+    resetAutoSlide();
+  }
+
+  function startAutoSlide() {
+    autoSlideInterval = setInterval(goToNext, 5000);
+  }
+
+  function resetAutoSlide() {
+    clearInterval(autoSlideInterval);
+    startAutoSlide();
+  }
+
+  prevBtn.addEventListener('click', goToPrev);
+  nextBtn.addEventListener('click', goToNext);
+
+  showImage(currentIndex);
+  startAutoSlide();
+
+  carouselContainer.addEventListener('mouseenter', () => {
+    clearInterval(autoSlideInterval);
+  });
+
+  carouselContainer.addEventListener('mouseleave', () => {
+    startAutoSlide();
+  });
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  const carousels = document.querySelectorAll('.carousel-container');
+  if (carousels.length === 0) {
+    console.log('Nenhum carrossel encontrado.');
+  } else {
+    carousels.forEach((carousel, index) => {
+      console.log(`Inicializando carrossel ${index + 1}`);
+      initCarousel(carousel);
+    });
+  }
+});
