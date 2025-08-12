@@ -1,32 +1,32 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta name="description" content="Alugue seu apartamento no BeachFlats Muro Alto, Porto de Galinhas. Acomoda até 9 pessoas com conforto e lazer. Reserve agora.">
-  <meta name="keywords" content="Porto de Galinhas, Muro Alto, hospedagem, aluguel temporada, Beach Flats">
-  <meta name="author" content="Beach Flats Muro Alto">
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>BeachFlats Muro Alto</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css" />
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
-  <link rel="icon" href="Img/favicon.ico" type="image/x-icon">
-<!-- Para Apple/Safari -->
-<link rel="apple-touch-icon" sizes="180x180" href="Img/favicon.ico">
+    <meta name="description" content="Alugue seu apartamento no BeachFlats Muro Alto, Porto de Galinhas. Acomoda até 9 pessoas com conforto e lazer. Reserve agora.">
+    <meta name="keywords" content="Porto de Galinhas, Muro Alto, hospedagem, aluguel temporada, Beach Flats">
+    <meta name="author" content="Beach Flats Muro Alto">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BeachFlats Muro Alto e Gravatá</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css" />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <link rel="icon" href="Img/favicon.ico" type="image/x-icon">
+    <!-- Para Apple/Safari -->
+    <link rel="apple-touch-icon" sizes="180x180" href="Img/favicon.ico">
 
-<!-- Para Android/Chrome -->
-<link rel="icon" type="image/png" sizes="192x192" href="Img/favicon.ico">
+    <!-- Para Android/Chrome -->
+    <link rel="icon" type="image/png" sizes="192x192" href="Img/favicon.ico">
 
-<!-- Para Windows Metro -->
-<meta name="msapplication-TileImage" content="Img/favicon.ico">
-<meta name="msapplication-TileColor" content="#007b8f">
-<link rel="shortcut icon" href="Img/favicon.ico" type="image/x-icon">
+    <!-- Para Windows Metro -->
+    <meta name="msapplication-TileImage" content="Img/favicon.ico">
+    <meta name="msapplication-TileColor" content="#007b8f">
+    <link rel="shortcut icon" href="Img/favicon.ico" type="image/x-icon">
 </head>
 <body>
-  <main>
-  <header class="novo-header">
+    <main>
+        <header class="novo-header">
     <div class="header-container">
       <a href="index.html" class="logo" aria-label="Página inicial">BeachFlats Muro Alto</a>
       <button class="hamburger" aria-label="Abrir menu" aria-expanded="false" aria-controls="mobile-menu">
@@ -36,7 +36,7 @@
       </button>
       <nav class="menu" id="mobile-menu" aria-label="Menu principal">
         <a href="index.html">Home</a>
-        <a href="quarto-detalhes.html">Condomínio</a>
+        <a href="index.html#quarto">Apartamentos</a>
         <a href="Reserva.html">Reservas</a>
         <a href="index.html#contato">Contato</a>
         <a href="regras.html">Regras</a>
@@ -46,442 +46,714 @@
     </div>
   </header> 
 
-  <section class="hero nova-hero">
-    <div class="hero-overlay">
-      <h1>Faça sua reserva em Porto de Galinhas/PE</h1>
-      <p>O melhor preço está aqui</p>
-      <form class="reserva-box" id="reservas">
-        <div class="input-group">
-          <label for="checkin-checkout" class="sr-only">Período de Check-in e Checkout</label>
-          <i class="fas fa-calendar-alt" aria-hidden="true"></i>
-          <input type="text" id="checkin-checkout" placeholder="Check-in e checkout" readonly />
+        <section class="hero nova-hero">
+            <div class="hero-overlay">
+                <h1>Faça sua reserva em <br>Muro Alto e Gravatá - PE</h1>
+                <p>O melhor preço está aqui</p>
+                <form class="reserva-box" id="reservas">
+                    <div class="input-group">
+                        <label for="checkin-checkout" class="sr-only">Período de Check-in e Checkout</label>
+                        <i class="fas fa-calendar-alt" aria-hidden="true"></i>
+                        <input type="text" id="checkin-checkout" placeholder="Check-in e checkout" readonly />
+                    </div>
+                    <div class="input-group filtro-hospedes-container">
+                        <label for="filtro-hospedes">Quantidade de Hóspedes:</label>
+                        <i class="fas fa-users" aria-hidden="true"></i>
+                        <select id="filtro-hospedes">
+                            <option value="0">Todos</option>
+                            <option value="1">1 hóspede</option>
+                            <option value="2">2 hóspedes</option>
+                            <option value="3">3 hóspedes</option>
+                            <option value="4">4 hóspedes</option>
+                            <option value="5">5 hóspedes</option>
+                            <option value="6">6 hóspedes</option>
+                            <option value="7">7 hóspedes</option>
+                            <option value="8">8 hóspedes</option>
+                            <option value="9">9 hóspedes</option>
+                        </select>
+                    </div>
+                    <button id="btnVerificar" class="btnVerificar" type="button">
+                        <i class="fas fa-search"></i> Procurar
+                    </button>
+                </form>
+            </div>
+        </section>
+        <section class="quartos-section" id="quarto">
+            <h2>Aluguéis de Apartamento Por Temporada</h2>
+            <div class="quartos-container">
+                <div class="quartos-grid">
+
+                    <!-- Card 1 - Apartamento -->
+                    <div class="quarto-card" data-hospedes="9">
+                        <div class="quarto-carousel">
+                            <div class="carousel-images">
+                                <img src="Img/FullSizeRender.JPG" alt="Quarto" class="carousel-image">
+                                <img src="Img/QUARTO1.avif" alt="Banheiro" class="carousel-image">
+                                <img src="Img/c6a95cd7-ec85-4df3-b4e1-45df54ae8be2.avif" alt="Vista" class="carousel-image">
+                            </div>
+                            <button class="carousel-btn prev-btn">&lt;</button>
+                            <button class="carousel-btn next-btn">&gt;</button>
+                        </div>
+                        <div class="quarto-info">
+                            <h3>Apto 3º Andar/ Torre 3</h3>
+                            <p>Um espaço amplo e confortável.</p>
+                            <div class="quarto-detalhes">
+                                <p><i class="fas fa-bed"></i> 3 quartos</p>
+                                <p><i class="fas fa-bed"></i> 4 camas</p>
+                                <p><i class="fas fa-bath"></i> 2 banheiros</p>
+                                <p><i class="fas fa-user"></i> Até 9 pessoas</p>
+                            </div>
+                            <p class="preco">A partir de R$350,00</p>
+                            <a href="quarto-detalhes.html" class="btn">Detalhes</a>
+                        </div>
+                    </div>
+
+                    <!-- Card 2 - Espaço Externo -->
+                    <div class="quarto-card">
+                        <div class="quarto-carousel">
+                            <div class="carousel-images">
+                                <img src="Img/IMG_1361.JPG" alt="Jardim" class="carousel-image active">
+                                <img src="Img/garagem.avif" alt="Garagem" class="carousel-image active">
+                                <img src="Img/IMG_1369.JPG" alt="Área verde" class="carousel-image">
+                                <img src="Img/parque.webp" alt="Parque" class="carousel-image">
+                                <img src="Img/6a96d040-e557-42df-86b0-30e4730c6472.webp" alt="Vista externa" class="carousel-image">
+                            </div>
+                            <button class="carousel-btn prev-btn">&lt;</button>
+                            <button class="carousel-btn next-btn">&gt;</button>
+                        </div>
+                        <div class="quarto-info">
+                            <h3>Espaço Externo</h3>
+                            <p>Áreas verdes e paisagismo premium</p>
+                            <div class="quarto-detalhes">
+                                <p><i class="fas fa-tree"></i> Jardins exuberantes</p>
+                                <p><i class="fas fa-umbrella-beach"></i> Áreas de descanso</p>
+                                <p><i class="fas fa-car"></i> Garagem</p>
+                            </div>
+                            <a href="quarto-detalhes.html" class="btn">Visitar</a>
+                        </div>
+                    </div>
+
+                    <!-- Card 3 - Área de Lazer -->
+                    <div class="quarto-card">
+                        <div class="quarto-carousel">
+                            <div class="carousel-images">
+                                <img src="Img/piscina.jpg" alt="Piscina" class="carousel-image active">
+                                <img src="Img/FullSizeRender 11.JPG" alt="Piscina" class="carousel-image active">
+                                <img src="Img/FullSizeRender 10.JPG" alt="Piscina" class="carousel-image active">
+                                <img src="Img/piscina1.jpg" alt="Piscina" class="carousel-image active">
+                                <img src="Img/piscina2.jpg" alt="Piscina" class="carousel-image active">
+                                <img src="Img/futebol.webp" alt="Quadra" class="carousel-image">
+                                <img src="Img/Brinquedoteca.avif" alt="Playground" class="carousel-image">
+                                <img src="Img/Sala de jogos.avif" alt="Quadra" class="carousel-image">
+                                <img src="Img/226dff01-ae31-4030-90d7-467d8a81be7b.avif" alt="Playground" class="carousel-image">
+                            </div>
+                            <button class="carousel-btn prev-btn">&lt;</button>
+                            <button class="carousel-btn next-btn">&gt;</button>
+                        </div>
+                        <div class="quarto-info">
+                            <h3>Área de Lazer</h3>
+                            <p>Diversão para toda a família</p>
+                            <div class="quarto-detalhes">
+                                <p><i class="fas fa-swimming-pool"></i> Piscinas</p>
+                                <p><i class="fas fa-futbol"></i> Quadras esportivas</p>
+                                <p><i class="fas fa-futbol"></i> Brinquedoteca</p>
+                                <p><i class="fas fa-futbol"></i> Academia</p>
+                                <p><i class="fas fa-futbol"></i> Sala de Jogos</p>
+                            </div>
+                            <a href="quarto-detalhes.html" class="btn">Conhecer</a>
+                        </div>
+                    </div>
+
+                    <!-- Card 4 - Restaurantes -->
+                    <div class="quarto-card">
+                        <div class="quarto-carousel">
+                            <div class="carousel-images">
+                                <img src="Img/restaurante.avif" alt="Restaurante" class="carousel-image active">
+                                <img src="Img/IMG_1385.JPG" alt="Área de alimentação" class="carousel-image">
+                                <img src="Img/IMG_1382.JPG" alt="Bar" class="carousel-image">
+                                <img src="Img/IMG_1389.JPG" alt="Bar" class="carousel-image">
+                            </div>
+                            <button class="carousel-btn prev-btn">&lt;</button>
+                            <button class="carousel-btn next-btn">&gt;</button>
+                        </div>
+                        <div class="quarto-info">
+                            <h3>Restaurante</h3>
+                            <p>Gastronomia diversificada</p>
+                            <div class="quarto-detalhes">
+                                <p><i class="fas fa-utensils"></i> Variedade de pratos</p>
+                                <p><i class="fas fa-cocktail"></i> Bar aconchegante</p>
+                                <p><i class="fas fa-cocktail"></i> Área para Churrasco</p>
+                            </div>
+                            <a href="quarto-detalhes.html" class="btn">Reservar</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- TÍTULO SEPARADO -->
+                <h2 class="titulo-mais-opcoes" style="text-align:center; margin-top: 40px;">Mais opções de apartamentos</h2>
+
+                <!-- NOVA LINHA COM MAIS 3 CARDS -->
+                <div class="quartos-container">
+                    <div class="quartos-grid">
+
+                        <!-- Card 5 -->
+                        <div class="quarto-card" data-hospedes="5">
+                            <div class="quarto-carousel">
+                                <div class="carousel-images">
+                                    <img src="Img/1 quarto/IMG_0822.JPG" alt="Apartamento Compacto" class="carousel-image">
+                                    <img src="Img/1 quarto/IMG_0823.JPG" alt="Vista da varanda" class="carousel-image">
+                                    <img src="Img/1 quarto/IMG_0824.JPG" alt="Vista da varanda" class="carousel-image">
+                                    <img src="Img/1 quarto/IMG_0825.JPG" alt="Vista da varanda" class="carousel-image">
+                                    <img src="Img/1 quarto/IMG_0826.JPG" alt="Vista da varanda" class="carousel-image">
+                                    <img src="Img/1 quarto/IMG_0827.JPG" alt="Vista da varanda" class="carousel-image">
+                                </div>
+                                <button class="carousel-btn prev-btn">&lt;</button>
+                                <button class="carousel-btn next-btn">&gt;</button>
+                            </div>
+                            <div class="quarto-info">
+                                <h3>Apto 4º Andar/ Torre 3 </h3>
+                                <p>Muro alto</p>
+                                <div class="quarto-detalhes">
+                                    <p><i class="fas fa-bed"></i> 1 quartos</p>
+                                    <p><i class="fas fa-bath"></i> 1 banheiros</p>
+                                    <p><i class="fas fa-user"></i> Até 5 pessoas</p>
+                                </div>
+                                <p class="preco">A partir de R$400,00</p>
+                                <a href="quarto-detalhes4.html" class="btn">Ver Detalhes</a>
+                            </div>
+                        </div>
+
+                        <!-- Card 6 -->
+                        <div class="quarto-card" data-hospedes="4">
+                            <div class="quarto-carousel">
+                                <div class="carousel-images">
+                                    <img src="Img/quarto 2 torre 3/WhatsApp Image 2025-08-07 at 16.45.23.jpeg" alt="quarto2" class="carousel-image">
+                                    <img src="Img/quarto 2 torre 3/area de serviço.jpeg" alt="" class="carousel-image">
+                                    <img src="Img/quarto 2 torre 3/area de serviço1.jpeg" alt="Vista da varanda" class="carousel-image">
+                                    <img src="Img/quarto 2 torre 3/cozinha.jpeg" alt="cozinha" class="carousel-image">
+                                    <img src="Img/quarto 2 torre 3/quarto.jpeg" alt="Vista da varanda" class="carousel-image">
+                                    <img src="Img/quarto 2 torre 3/WhatsApp Image 2025-08-07 at 16.45.22.jpeg" alt="quarto1" class="carousel-image">
+                                </div>
+                                <button class="carousel-btn prev-btn">&lt;</button>
+                                <button class="carousel-btn next-btn">&gt;</button>
+                            </div>
+                            <div class="quarto-info">
+                                <h3>Apto 3º Andar/ Torre 3</h3>
+                                <p>Muro Alto</p>
+                                <div class="quarto-detalhes">
+                                    <p><i class="fas fa-bed"></i> 2 quarto</p>
+                                    <p><i class="fas fa-bath"></i> 2 banheiros incluido suíte</p>
+                                    <p><i class="fas fa-user"></i> Até 8 pessoas</p>
+                                </div>
+                                <p class="preco">A partir de R$250,00</p>
+                                <a href="quarto-detalhes5.html" class="btn">Ver Detalhes</a>
+                            </div>
+                        </div>
+
+                        <!-- Card 7 -->
+                        <div class="quarto-card" data-hospedes="8">
+                            <div class="quarto-carousel">
+                                <div class="carousel-images">
+                                    <img src="Img/Quarto 3 torre 1/IMG_0843.JPG" alt="Apartamento com varanda" class="carousel-image">
+                                    <img src="Img/Quarto 3 torre 1/IMG_0846.JPG" alt="quarto"class="carousel-image">
+                                    <img src="Img/Quarto 3 torre 1/IMG_0847.JPG" alt="Sala" class="carousel-image">
+                                    <img src="Img/Quarto 3 torre 1/IMG_0850.JPG" alt="Cozinha" class="carousel-image">
+                                    <img src="Img/Quarto 3 torre 1/IMG_0852.JPG" alt="varanda" class="carousel-image">
+                                    <img src="Img/Quarto 3 torre 1/IMG_0851.JPG" alt="banheiro" class="carousel-image">
+                                    <img src="Img/Quarto 3 torre 1/IMG_0854.JPG" alt="mesa" class="carousel-image">
+                                </div>
+                                <button class="carousel-btn prev-btn">&lt;</button>
+                                <button class="carousel-btn next-btn">&gt;</button>
+                            </div>
+                            <div class="quarto-info">
+                                <h3>Apto 2º andar/ Torre 1</h3>
+                                <p>Muro Alto</p>
+                                <div class="quarto-detalhes">
+                                    <p><i class="fas fa-bed"></i> 3 quartos</p>
+                                    <p><i class="fas fa-bath"></i> 2 banheiros incluido suíte</p>
+                                    <p><i class="fas fa-user"></i> Até 8 pessoas</p>
+                                </div>
+                                <p class="preco">A partir de R$350,00</p>
+                                <a href="quarto-detalhes6.html" class="btn">Ver Detalhes</a>
+                            </div>
+                        </div>
+                        <!-- Card 8 -->
+                        <div class="quarto-card" data-hospedes="8">
+                            <div class="quarto-carousel">
+                                <div class="carousel-images">
+                                    <img src="Img/Terreo/IMG_0855.JPG" alt="Apartamento com varanda" class="carousel-image">
+                                    <img src="Img/Terreo/IMG_0856.JPG" alt="Sala decorada" class="carousel-image">
+                                    <img src="Img/Terreo/IMG_0857.JPG" alt="Sala decorada" class="carousel-image">
+                                    <img src="Img/Terreo/IMG_0858.JPG" alt="Sala decorada" class="carousel-image">
+                                </div>
+                                <button class="carousel-btn prev-btn">&lt;</button>
+                                <button class="carousel-btn next-btn">&gt;</button>
+                            </div>
+                            <div class="quarto-info">
+                                <h3>Apto Térreo/ Torre 5</h3>
+                                <p>Muro Alto</p>
+                                <div class="quarto-detalhes">
+                                    <p><i class="fas fa-bed"></i> 3 quartos</p>
+                                    <p><i class="fas fa-bath"></i> 2 banheiros incluido suíte</p>
+                                    <p><i class="fas fa-user"></i> Até 8 pessoas</p>
+                                </div>
+                                <p class="preco">A partir de R$350,00</p>
+                                <a href="quarto-detalhes3.html" class="btn">Ver Detalhes</a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- fecha .quartos-grid dos 3 cards -->
+                </div>
+                <!-- fecha .quartos-container -->
+                <div class="container">
+                    <h2 class="titulo-mais-opcoes" style="text-align:center; margin-top: 40px;">Opção Gravatá</h2>
+                    <div class="quartos-grid" style="display: flex; flex-wrap: wrap; gap: 20px; justify-content: center;">
+                        <div class="quarto-card" data-hospedes="8">
+                            <div class="quarto-carousel">
+                                <div class="carousel-images">
+                                    <img src="Img/Gravatá/Principal.jpeg" alt="Apartamento em Gravatá" class="carousel-image active">
+                                    <img src="Img/Gravatá/Cozinha.jpeg" alt="Cozinha" class="carousel-image">
+                                    <img src="Img/Gravatá/Quarto 1.jpeg" alt="Vista do quarto" class="carousel-image">
+                                    <img src="Img/Gravatá/Quarto 2.jpeg" alt="Vista do quarto" class="carousel-image">
+                                    <img src="Img/Gravatá/Sala de Jantar.jpeg" alt="Vista Da Sala" class="carousel-image">
+                                    <img src="Img/Gravatá/Sala.jpeg" alt="Vista da Sala" class="carousel-image">
+                                    <img src="Img/Gravatá/varanda.jpeg" alt="Vista da Varanda" class="carousel-image">
+                                    <img src="Img/Gravatá/Varanda 2.jpeg" alt="Vista do Varanda" class="carousel-image">
+                                </div>
+                                <button class="carousel-btn prev-btn">&lt;</button>
+                                <button class="carousel-btn next-btn">&gt;</button>
+                            </div>
+                            <div class="quarto-info">
+                                <h3>Winterville Gravatá</h3>
+                                <p>Tranquilidade e clima serrano para sua família</p>
+                                <div class="quarto-detalhes">
+                                    <p><i class="fas fa-bed"></i> 2 Quartos </p>
+                                    <p><i class="fas fa-bath"></i> 2 Banheiros incluido Suíte </p>
+                                    <p><i class="fas fa-user"></i> Até 8 pessoas</p>
+                                </div>
+                                <p class="preco">A partir de R$350,00</p>
+                                <a href="quarto-detalhes2.html" class="btn">Ver Detalhes</a>
+                            </div>
+                        </div>
+
+                        <!-- Card 10 - Gravatá Luxo -->
+                        <div class="quarto-card">
+                            <div class="quarto-carousel">
+                                <div class="carousel-images">
+                                    <img src="Img/Gravatá/Aréa externa 1.jpeg" alt="Flat Luxo Gravatá" class="carousel-image active">
+                                    <img src="Img/Gravatá/Aréa externa 2.jpeg" alt="Interior" class="carousel-image">
+                                    <img src="Img/Gravatá/Aréa externa 3.jpeg" alt="Interior" class="carousel-image">
+                                    <img src="Img/Gravatá/WhatsApp Image 2025-08-07 at 16.59.51.jpeg" alt="" class="carousel-image">
+                                    <img src="Img/Gravatá/WhatsApp Image 2025-08-07 at 16.59.52 (2).jpeg" alt="" class="carousel-image">
+                                    <img src="Img/Gravatá/WhatsApp Image 2025-08-07 at 16.59.52 (1).jpeg" alt="" class="carousel-image">
+                                    <img src="Img/Gravatá/WhatsApp Image 2025-08-07 at 16.59.52 (3).jpeg" alt="Interior" class="carousel-image">
+                                </div>
+                                <button class="carousel-btn prev-btn">&lt;</button>
+                                <button class="carousel-btn next-btn">&gt;</button>
+                            </div>
+                            <div class="quarto-info">
+                                <h3>Aréa Externa</h3>
+                                <p>Áreas verdes e paisagismo premium</p>
+                                <div class="quarto-detalhes">
+                                    <p><i class="fas fa-tree"></i> Jardins exuberantes</p>
+                                    <p><i class="fas fa-umbrella-beach"></i> Áreas de descanso</p>
+                                    <p><i class="fas fa-car"></i> Garagem</p>
+                                </div>
+                                <a href="quarto-detalhes2.html" class="btn"> Visitar </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        </section>
+        <section class="airbnb-reviews-section" aria-label="Avaliações Airbnb" id="avaliação">
+            <div class="titulo-avaliacoes">
+                <h2>Avaliações</h2>
+                <div class="linha-azul"></div>
+            </div>
+
+            <div class="airbnb-header">
+                <img src="Img/airbnb-logo.png" alt="Airbnb" class="airbnb-logo" />
+                <div class="airbnb-rating">
+                    <span class="rating-score">5.0</span>
+                    <span class="stars">★★★★★</span>
+                    <span class="review-count">(141)</span>
+                </div>
+                <a href="https://www.airbnb.com.br/rooms/709555671926013773" target="_blank" rel="noopener" class="review-button">Avalie-nos no Airbnb</a>
+            </div>
+            <div class="airbnb-reviews-carousel">
+                <div class="review">
+                    <img src="Img/avaliação/d996658b-84a1-426c-8774-3051a9a952cc.avif" alt="Caroline" class="reviewer-photo" />
+                    <div class="review-content">
+                        <div class="reviewer-name">Caroline</div>
+                        <div class="review-date">dezembro de 2022</div>
+                        <div class="review-stars">★★★★★</div>
+                        <p>Muito bom, super recomendo. Adorei❤️</p>
+                    </div>
+                </div>
+                <div class="review">
+                    <img src="Img/avaliação/8c099dbb-4133-49c4-b3ec-14209ee12343.avif" alt="Cristiane" class="reviewer-photo" />
+                    <div class="review-content">
+                        <div class="reviewer-name">Cristiane</div>
+                        <div class="review-date">março de 2025</div>
+                        <div class="review-stars">★★★★★</div>
+                        <p>Fui junto com a minha família e todos ficaram encantado com a casa. O Apartamento muito confortável, exatamente como está ...</p>
+                    </div>
+                </div>
+                <div class="review">
+                    <img src="Img/avaliação/w.avif" alt="Wilquelani" class="reviewer-photo" />
+                    <div class="review-content">
+                        <div class="reviewer-name">Wilquelani</div>
+                        <div class="review-date">2 anos no Airbnb</div>
+                        <div class="review-stars">★★★★★</div>
+                        <p>O apto é exatamente como nas fotos, lindo, limpo, acomodou perfeitamente 9 pessoas, disponibilizava cadeiras de praia e cooler, havia tudo de necessário, panelas, roupas de cama, ...</p>
+                    </div>
+                </div>
+                <div class="review">
+                    <img src="Img/avaliação/57a17f30-2ec9-4ca0-a0df-22c2fb8d912f.avif" alt="Leandra" class="reviewer-photo" />
+                    <div class="review-content">
+                        <div class="reviewer-name">Leandra</div>
+                        <div class="review-date">fevereiro de 2025</div>
+                        <div class="review-stars">★★★★★</div>
+                        <p>super recomendo 😊 o apartamento é uma graça, perto do centro de Porto de galinhas, 8min de carro. 5 min da praia de muro alto, que por sinal é lindaaaaa 💗 a ...</p>
+                    </div>
+                </div>
+                <div class="review">
+                    <img src="Img/avaliação/ca410e9e-6f66-4635-9554-e4af82bd812f.avif" alt="Sheila" class="reviewer-photo" />
+                    <div class="review-content">
+                        <div class="reviewer-name">Sheila</div>
+                        <div class="review-date">janeiro de 2025</div>
+                        <div class="review-stars">★★★★★</div>
+                        <p>O local é amplo e dispõe de muitas comodidades. Parece até um clube. O apto é espaçoso e acomodou confortavelmente 9 pessoas. Carece de louças e alguns utensílios básicos mas ...</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="titulo-contato" id="contato" aria-label="Seção de contato">
+            <h2>Contato</h2>
+            <div class="linha-azul"></div>
+            <p>Entre em contato para mais informações</p>
+        </section>
+
+        <section class="contato-section container" aria-label="Formulário de contato e informações">
+            <div class="contato-info">
+                <h2>Fale Conosco</h2>
+                <p>Estamos disponíveis para atender você.</p>
+                <div class="info-item">
+                    <div class="icon"><i class="fas fa-phone" aria-hidden="true"></i></div>
+                    <div>
+                        <p><a href="tel:+55819997362639">(81) 99736-2639</a> - Jonatas</p>
+                    </div>
+                    <div>
+                        <p><a href="tel:+5581998070630">(81) 99807-0630</a> - Danielle</p>
+                    </div>
+                </div>
+                <div class="info-item">
+                    <div class="icon"><i class="fas fa-map-marker-alt" aria-hidden="true"></i></div>
+                    <div>
+                        <p>Estrada De Muro Alto - PE 09 Km 009, Ipojuca, PE</p>
+                    </div>
+                </div>
+                <!-- Mapa atualizado -->
+                <div class="mapa-container">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31570.85775764891!2d-35.01867882929309!3d-8.464600212327754!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x7aa93004caa6633%3A0xd6857f4d6ae5cd15!2sMuro%20Alto%20Condom%C3%ADnio%20Clube(MACC)!5e0!3m2!1spt-BR!2sbr!4v1750100120205!5m2!1spt-BR!2sbr"
+                    class="mapa-iframe" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" aria-label="Mapa da localização do Beach Flats">
+                    </iframe>
+                </div>
+            </div>
+
+            <div class="contato-formulario">
+                <h2>Envie sua mensagem</h2>
+                <p>Responderemos em breve.</p>
+                <form action="https://api.staticforms.xyz/submit" method="POST">
+                    <input type="hidden" name="accessKey" value="sf_6med3001b29b99c2cfgki9lm" />
+                    <label for="nome">Nome</label>
+                    <input type="text" id="nome" name="nome" placeholder="Nome" required />
+
+                    <label for="email">E-mail</label>
+                    <input type="email" id="email" name="email" placeholder="E-mail" required />
+
+                    <label for="mensagem">Mensagem</label>
+                    <textarea id="mensagem" name="mensagem" rows="5" placeholder="Mensagem" required></textarea>
+
+                    <button type="submit">Enviar</button>
+                </form>
+            </div>
+        </section>
+
+    <!-- Botão Flutuante do WhatsApp -->
+    <div class="whatsapp-float" id="openChat">
+        <img src="img/whatsapp.png" alt="WhatsApp" width="70" height="70" />
+        <span class="sr-only">WhatsApp</span>
+    </div>
+
+    <!-- Overlay para sidebar -->
+    <div id="sidebarOverlay" class="sidebar-overlay"></div>
+
+    <!-- Menu Lateral de Reserva -->
+    <div id="whatsappSidebar" class="whatsapp-sidebar">
+        <div class="whatsapp-header">
+            <strong>Reserva Rápida 💬</strong>
+            <button id="closeChat">&times;</button>
         </div>
-        <div class="input-group">
-          <label for="hospedes" class="sr-only">Número de hóspedes</label>
-          <i class="fas fa-users" aria-hidden="true"></i>
-          <select id="hospedes">
-            <option value="" disabled selected hidden>Hóspedes</option>
-            <option value="1">1 hóspede</option>
-            <option value="2">2 hóspedes</option>
-            <option value="3">3 hóspedes</option>
-            <option value="4">4 hóspedes</option>
-            <option value="5">5 hóspedes</option>
-            <option value="6">6 hóspedes</option>
-            <option value="7">7 hóspedes</option>
-            <option value="8">8 hóspedes</option>
-            <option value="9">9 hóspedes</option>
-          </select>
+
+        <div class="whatsapp-body">
+            <label>📅 Entrada:</label>
+            <input type="date" id="entrada" />
+
+            <label>📅 Saída:</label>
+            <input type="date" id="saida" />
+
+            <label>👨‍👩‍👧‍👦 Hóspedes:</label>
+            <input type="number" id="hospedes" min="1" max="10" />
+
+            <label>🏡 Apartamento:</label>
+            <select id="apartamento">
+                <option value="">Selecione</option>
+                <option value="Apto 3º Andar/ Torre 3 - Muro alto">Apto 3º Andar/ Torre 3 - Muro alto</option>
+                <option value="Apto 4º Andar/ Torre 3 - Muro alto">Apto 4º Andar/ Torre 3 - Muro alto</option>
+                <option value="Apto 3º Andar/ Torre 3  - Muro alto">Apto 3º Andar/ Torre 3  - Muro alto</option>
+                <option value="Apto 2º andar/ Torre 1 - Muro alto">Apto 2º andar/ Torre 1 - Muro alto</option>
+                <option value="Apto Térreo/ Torre 5 - Muro alto">Apto Térreo/ Torre 5 - Muro alto</option>
+                <option value="Winterville - Gravatá">Winterville - Gravatá</option>
+                <!-- Adicione mais opções conforme necessário -->
+            </select>
+
+            <div id="observacao-temporada" style="margin-top: 1rem; font-size: 0.9rem; color: #555;">
+                <!-- Observação dinâmica será inserida aqui -->
+            </div>
+
+            <button id="enviarWhatsapp">Enviar para WhatsApp</button>
         </div>
-        <button class="btn-buscar" type="submit">
-          <i class="fas fa-search"></i> Procurar
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const observacaoDiv = document.getElementById('observacao-temporada');
+
+            // Exemplo de observação dinâmica, pode ser alterada conforme temporada
+            const hoje = new Date();
+            const mes = hoje.getMonth() + 1; // Janeiro = 0
+            let mensagem = '';
+
+            if (mes >= 12 || mes <= 2) {
+                mensagem = 'Temporada alta: tarifas especiais e disponibilidade limitada.';
+            } else if (mes >= 3 && mes <= 5) {
+                mensagem = 'Temporada média: aproveite descontos exclusivos.';
+            } else {
+                mensagem = 'Temporada baixa: aproveite preços promocionais.';
+            }
+
+            if (observacaoDiv) {
+                observacaoDiv.textContent = mensagem;
+            }
+        });
+    </script>
+
+        <button id="backToTop" class="back-to-top" aria-label="Voltar ao topo" tabindex="0" type="button">
+            <i class="fas fa-chevron-up" aria-hidden="true"></i>
         </button>
-      </form>
-      <script>
-        document.getElementById('reservas').addEventListener('submit', function(event) {
-          event.preventDefault();
-          const dateRange = document.getElementById('checkin-checkout').value;
-          const guests = document.getElementById('hospedes').value;
-          if (!dateRange || !guests) {
-            alert('Por favor, selecione o período e o número de hóspedes.');
+
+        <footer class="footer" role="contentinfo">
+            <div class="footer-container">
+                <div class="footer-col footer-logo">
+                    <h2>Beach Flats</h2>
+                    <p>Seu lugar perfeito para descansar em Porto de Galinhas.</p>
+                    <div class="social-icons">
+                        <a href="https://www.threads.com/@muroaltoap307?xmt=AQF0FX2O8k08wpVouDW9T2ZXGsZzJ8qTXGXSbVEsJnsKOCk" aria-label="Threads"><i class="fab fa-threads"></i></a>
+                        <a href="https://www.instagram.com/muroaltoap307/" aria-label="Instagram"><i class="fab fa-instagram-square"></i></a>
+                        <a href="https://www.instagram.com/beachflatstemporada/" aria-label="Instagram"><i class="fab fa-instagram-square"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col footer-links" aria-label="Links úteis">
+                    <h3>Links Úteis</h3>
+                    <ul>
+                        <li><a href="index.html">Inicio</a></li>
+                        <li><a href="#quarto">Condomínio</a></li>
+                        <li><a href="Reserva.html">Reservas</a></li>
+                        <li><a href="#contato">Contato</a></li>
+                        <li><a href="#regras">Regras de acomodação</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col footer-pagamento" id="pagamento" aria-label="Formas de pagamento aceitas">
+                    <h3>Formas de Pagamento</h3>
+                    <ul>
+                        <li><img src="Img/icons8-visa-48.png" alt="Visa" /></li>
+                        <li><img src="Img/master.png" alt="Mastercard" /></li>
+                        <li><img src="Img/DINHEIRO.png" alt="Dinheiro" /></li>
+                        <li><img src="Img/PIX.png" alt="PIX" /></li>
+                    </ul>
+                </div>
+                <div class="footer-col footer-contato" aria-label="Informações de contato">
+                    <h3>Contato</h3>
+                    <p><i class="fas fa-phone" aria-hidden="true"></i> <a href="tel:+5581997362639">(81) 99736-2639</a></p>
+                    <p><i class="fas fa-phone" aria-hidden="true"></i> <a href="tel:+5581998070630">(81) 99807-0630</a></p>
+                    <p><i class="fas fa-map-marker-alt" aria-hidden="true"></i> Estrada De Muro Alto - PE 09 Km 009, Ipojuca, PE</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Beach Flats. Todos os direitos reservados.</p>
+                <p>Desenvolvido por <a href="https://www.instagram.com/jm_marketingoficial/" target="_blank" rel="noopener">Jm Marketing Digital</a></p>
+            </div>
+        </footer>
+
+        <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+        <script src="https://cdn.jsdelivr.net/npm/flatpickr/dist/l10n/pt.js"></script>
+            <script>
+            document.addEventListener('DOMContentLoaded', function() {
+              // Inicializa o flatpickr normalmente
+              const flatpickrInstance = flatpickr("#checkin-checkout", {
+                mode: "range",
+                dateFormat: "Y-m-d",
+                minDate: "today",
+                locale: "pt",
+                minDays: 2, // Mínimo de 2 diárias
+                onReady: function(selectedDates, dateStr, instance) {
+                  instance.calendarContainer.classList.add('custom-calendar');
+                },
+                onChange: function(selectedDates, dateStr, instance) {
+                  if(selectedDates.length === 2) {
+                    const diffTime = Math.abs(selectedDates[1] - selectedDates[0]);
+                    const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+                    if(diffDays < 2) {
+                      instance.clear();
+                      alert('A reserva requer no mínimo 2 diárias');
+                    }
+                  }
+                }
+              });
+
+              // Recupera dados da reserva do localStorage e preenche os campos
+              const savedReservation = localStorage.getItem('beachFlatsReservation');
+              if (savedReservation) {
+                try {
+                  const reservationData = JSON.parse(savedReservation);
+                  if (reservationData.checkin && reservationData.checkout) {
+                    const checkinDate = new Date(reservationData.checkin);
+                    const checkoutDate = new Date(reservationData.checkout);
+                    const formattedCheckin = checkinDate.toISOString().split('T')[0];
+                    const formattedCheckout = checkoutDate.toISOString().split('T')[0];
+                    flatpickrInstance.setDate([formattedCheckin, formattedCheckout], true);
+                  }
+                  if (reservationData.guests) {
+                    const guestsSelect = document.getElementById('filtro-hospedes');
+                    if (guestsSelect) {
+                      guestsSelect.value = reservationData.guests;
+                    }
+                  }
+                } catch (e) {
+                  console.error('Erro ao recuperar dados da reserva do localStorage:', e);
+                }
+              }
+
+              // Evento de clique no botão "Procurar" para salvar dados e redirecionar
+              const btnVerificar = document.getElementById('btnVerificar');
+              if (btnVerificar) {
+                btnVerificar.addEventListener('click', function() {
+                  const dateRange = document.getElementById('checkin-checkout').value;
+                  const guests = document.getElementById('filtro-hospedes').value;
+
+                  if (dateRange && guests && guests !== '0') {
+                    const dates = dateRange.split(/ a | até | to /);
+                    if (dates.length === 2) {
+                      const reservationData = {
+                        checkin: dates[0],
+                        checkout: dates[1],
+                        guests: guests,
+                        timestamp: new Date().toISOString()
+                      };
+                      localStorage.setItem('beachFlatsReservation', JSON.stringify(reservationData));
+
+                      // Redirecionar para a seção de apartamentos
+                      setTimeout(() => {
+                        const targetSection = document.getElementById('quarto');
+                        if (targetSection) {
+                          targetSection.scrollIntoView({ behavior: 'smooth' });
+                        }
+                      }, 100);
+                    }
+                  } else {
+                    alert('Por favor, selecione o período e a quantidade de hóspedes.');
+                  }
+                });
+              }
+
+              // Validação do formulário para evitar envio com datas inválidas
+              document.getElementById('reservas').addEventListener('submit', function(e) {
+                const dates = document.getElementById('checkin-checkout').value;
+                if(!dates || dates.split(/ a | to /).length < 2) {
+                  e.preventDefault();
+                  alert('Por favor, selecione um período válido de no mínimo 2 diárias');
+                }
+              });
+            });
+    document.getElementById('openChat').addEventListener('click', function () {
+        document.getElementById('whatsappSidebar').classList.add('open');
+        document.getElementById('sidebarOverlay').classList.add('active');
+    });
+
+    document.getElementById('closeChat').addEventListener('click', function () {
+        document.getElementById('whatsappSidebar').classList.remove('open');
+        document.getElementById('sidebarOverlay').classList.remove('active');
+    });
+
+    document.getElementById('sidebarOverlay').addEventListener('click', function () {
+        document.getElementById('whatsappSidebar').classList.remove('open');
+        document.getElementById('sidebarOverlay').classList.remove('active');
+    });
+
+    // Limitar hóspedes a 8 se apartamento for Winterville Gravatá
+    const apartamentoSelect = document.getElementById('apartamento');
+    const hospedesInput = document.getElementById('hospedes');
+
+    apartamentoSelect.addEventListener('change', function() {
+        if (this.value === 'Winterville Gravatá') {
+            hospedesInput.max = 8;
+            if (parseInt(hospedesInput.value) > 8) {
+                hospedesInput.value = 8;
+            }
+        } else {
+            hospedesInput.max = 10; // valor padrão
+        }
+    });
+
+    document.getElementById('enviarWhatsapp').addEventListener('click', function () {
+        const entrada = document.getElementById('entrada').value;
+        const saida = document.getElementById('saida').value;
+        const hospedes = document.getElementById('hospedes').value;
+        const apt = document.getElementById('apartamento').value;
+
+        if (!entrada || !saida || !hospedes || !apt) {
+            alert("Preencha todos os campos para continuar.");
             return;
-          }
-          // Format dateRange: "dd/mm/yyyy até dd/mm/yyyy"
-          const dates = dateRange.split(' até ');
-          if (dates.length !== 2) {
-            alert('Período inválido.');
+        }
+
+        // Validação de no mínimo 2 diárias
+        const entradaDate = new Date(entrada);
+        const saidaDate = new Date(saida);
+        const diffTime = saidaDate - entradaDate;
+        const diffDays = diffTime / (1000 * 60 * 60 * 24);
+
+        if (diffDays < 2) {
+            alert("A reserva requer no mínimo 2 diárias.");
             return;
-          }
-          const checkin = dates[0].split('/').reverse().join('-'); // yyyy-mm-dd
-          const checkout = dates[1].split('/').reverse().join('-'); // yyyy-mm-dd
-          const url = `quarto-detalhes.html?checkin=${checkin}&checkout=${checkout}&hospedes=${guests}`;
-          window.location.href = url;
-        });
-      </script>
-    </div>
-  </section>
-    <section class="quartos-section" id="quartos">
-  <h2>Aluguéis de Apartamento Por Temporada</h2>
-  <div class="titulo-quartos"></div>
-  <div class="quartos-container">
-    <div class="quartos-grid">
-      <!-- Card 1 - Apartamento -->
-      <div class="quarto-card">
-        <div class="quarto-carousel">
-          <div class="carousel-images">
-            <img src="Img/FullSizeRender.JPG" alt="Quarto" class="carousel-image">
-            <img src="Img/QUARTO1.avif" alt="Banheiro" class="carousel-image">
-            <img src="Img/c6a95cd7-ec85-4df3-b4e1-45df54ae8be2.avif" alt="Vista" class="carousel-image">
-          </div>
-          <button class="carousel-btn prev-btn">&lt;</button>
-          <button class="carousel-btn next-btn">&gt;</button>
-        </div>
-        <div class="quarto-info">
-          <h3>Espaço inteiro</h3>
-          <p>Um espaço amplo e confortável.</p>
-          <div class="quarto-detalhes">
-            <p><i class="fas fa-bed"></i> 3 quartos</p>
-            <p><i class="fas fa-bed"></i> 4 camas</p>
-            <p><i class="fas fa-bath"></i> 2 banheiros</p>
-            <p><i class="fas fa-user"></i> Até 9 pessoas</p>
-          </div>
-          <p class="preco">A partir de R$350,00</p>
-          <a href="quarto-detalhes.html" class="btn">Saiba Mais</a>
-        </div>
-      </div>
+        }
 
-      <!-- Card 2 - Espaço Externo -->
-      <div class="quarto-card">
-        <div class="quarto-carousel">
-          <div class="carousel-images">
-            <img src="Img/IMG_1361.JPG" alt="Jardim" class="carousel-image active">
-             <img src="Img/garagem.avif" alt="Garagem" class="carousel-image active">
-            <img src="Img/IMG_1369.JPG" alt="Área verde" class="carousel-image">
-            <img src="Img/parque.webp" alt="Parque" class="carousel-image">
-            <img src="Img/6a96d040-e557-42df-86b0-30e4730c6472.webp" alt="Vista externa" class="carousel-image">
-          </div>
-          <button class="carousel-btn prev-btn">&lt;</button>
-          <button class="carousel-btn next-btn">&gt;</button>
-        </div>
-        <div class="quarto-info">
-          <h3>Espaço Externo</h3>
-          <p>Áreas verdes e paisagismo premium</p>
-          <div class="quarto-detalhes">
-            <p><i class="fas fa-tree"></i> Jardins exuberantes</p>
-            <p><i class="fas fa-umbrella-beach"></i> Áreas de descanso</p>
-            <p><i class="fas fa-umbrella-beach"></i> Garagem</p>
-          </div>
-          <a href="quarto-detalhes.html" class="btn">Visitar</a>
-        </div>
-      </div>
+        // Salvar dados da reserva no localStorage para uso na página quarto-detalhes
+        const reservationData = {
+            checkin: entrada,
+            checkout: saida,
+            guests: hospedes,
+        };
+        localStorage.setItem('reservationData', JSON.stringify(reservationData));
 
-      <!-- Card 3 - Área de Lazer -->
-      <div class="quarto-card">
-        <div class="quarto-carousel">
-          <div class="carousel-images">
-            <img src="Img/piscina.jpg" alt="Piscina" class="carousel-image active">
-            <img src="Img/FullSizeRender 11.JPG" alt="Piscina" class="carousel-image active">
-            <img src="Img/FullSizeRender 10.JPG" alt="Piscina" class="carousel-image active">
-            <img src="Img/piscina1.jpg" alt="Piscina" class="carousel-image active">
-            <img src="Img/piscina2.jpg" alt="Piscina" class="carousel-image active">
-            <img src="Img/futebol.webp" alt="Quadra" class="carousel-image">
-            <img src="Img/Brinquedoteca.avif" alt="Playground" class="carousel-image">
-            <img src="Img/Sala de jogos.avif" alt="Quadra" class="carousel-image">
-            <img src="Img/226dff01-ae31-4030-90d7-467d8a81be7b.avif" alt="Playground" class="carousel-image">
-          </div>
-          <button class="carousel-btn prev-btn">&lt;</button>
-          <button class="carousel-btn next-btn">&gt;</button>
-        </div>
-        <div class="quarto-info">
-          <h3>Área de Lazer</h3>
-          <p>Diversão para toda a família</p>
-          <div class="quarto-detalhes">
-            <p><i class="fas fa-swimming-pool"></i>Piscinas</p>
-            <p><i class="fas fa-futbol"></i> Quadras esportivas</p>
-            <p><i class="fas fa-futbol"></i> Brinquedoteca</p>
-            <p><i class="fas fa-futbol"></i> Academia</p>
-            <p><i class="fas fa-futbol"></i> Sala de Jogos</p>
-          </div>
-          <a href="quarto-detalhes.html" class="btn">Conhecer</a>
-        </div>
-      </div>
+        const msg = `Olá! Gostaria de fazer uma reserva:\n\n📅 Entrada: ${entrada}\n📅 Saída: ${saida}\n👥 Hóspedes: ${hospedes}\n🏡 Apartamento: ${apt}`;
+        const link = `https://wa.me/81997362639?text=${encodeURIComponent(msg)}`;
 
-      <!-- Card 4 - Restaurantes -->
-      <div class="quarto-card">
-        <div class="quarto-carousel">
-          <div class="carousel-images">
-            <img src="Img/restaurante.avif" alt="Restaurante" class="carousel-image active">
-            <img src="Img/IMG_1385.JPG" alt="Área de alimentação" class="carousel-image">
-            <img src="Img/IMG_1382.JPG" alt="Bar" class="carousel-image">
-            <img src="Img/IMG_1389.JPG" alt="Bar" class="carousel-image">
-          </div>
-          <button class="carousel-btn prev-btn">&lt;</button>
-          <button class="carousel-btn next-btn">&gt;</button>
-        </div>
-        <div class="quarto-info">
-          <h3>Restaurantes</h3>
-          <p>Gastronomia diversificada</p>
-          <div class="quarto-detalhes">
-            <p><i class="fas fa-utensils"></i> Variedade de pratos</p>
-            <p><i class="fas fa-cocktail"></i> Bares aconchegantes</p>
-            <p><i class="fas fa-cocktail"></i> Area para Churrasco</p>
-          </div>
-          <a href="quarto-detalhes.html" class="btn">Reservar</a>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
- <section class="airbnb-reviews-section" aria-label="Avaliações Airbnb" id="avaliação">
-  <div class="titulo-avaliacoes">
-    <h2>Avaliações</h2>
-    <div class="linha-azul"></div>
-  </div>
-
-    <div class="airbnb-header">
-      <img src="Img/airbnb-logo.png" alt="Airbnb" class="airbnb-logo" />
-      <div class="airbnb-rating">
-        <span class="rating-score">5.0</span>
-        <span class="stars">★★★★★</span>
-        <span class="review-count">(141)</span>
-      </div>
-      <a href="https://www.airbnb.com.br/rooms/709555671926013773" target="_blank" rel="noopener" class="review-button">Avalie-nos no Airbnb</a>
-    </div>
-    <div class="airbnb-reviews-carousel">
-      <div class="review">
-        <img src="Img/avaliação/d996658b-84a1-426c-8774-3051a9a952cc.avif" alt="Caroline" class="reviewer-photo" />
-        <div class="review-content">
-          <div class="reviewer-name">Caroline</div>
-          <div class="review-date">dezembro de 2022</div>
-          <div class="review-stars">★★★★★</div>
-          <p>Muito bom, super recomendo. Adorei❤️</p>
-        </div>
-      </div>
-      <div class="review">
-        <img src="Img/avaliação/8c099dbb-4133-49c4-b3ec-14209ee12343.avif" alt="Cristiane" class="reviewer-photo" />
-        <div class="review-content">
-          <div class="reviewer-name">Cristiane</div>
-          <div class="review-date">março de 2025</div>
-          <div class="review-stars">★★★★★</div>
-          <p>Fui junto com a minha família e todos ficaram encantado com a casa. O Apartamento muito confortável, exatamente como está ...</p>
-        </div>
-      </div>
-      <div class="review">
-        <img src="Img/avaliação/w.avif" alt="Wilquelani" class="reviewer-photo" />
-        <div class="review-content">
-          <div class="reviewer-name">Wilquelani</div>
-          <div class="review-date">2 anos no Airbnb</div>
-          <div class="review-stars">★★★★★</div>
-          <p>O apto é exatamente como nas fotos, lindo, limpo, acomodou perfeitamente 9 pessoas, disponibilizava cadeiras de praia e cooler, havia tudo de necessário, panelas, roupas de cama, ...</p>
-        </div>
-      </div>
-      <div class="review">
-        <img src="Img/avaliação/57a17f30-2ec9-4ca0-a0df-22c2fb8d912f.avif" alt="Leandra" class="reviewer-photo" />
-        <div class="review-content">
-          <div class="reviewer-name">Leandra</div>
-          <div class="review-date">fevereiro de 2025</div>
-          <div class="review-stars">★★★★★</div>
-          <p>super recomendo 😊 o apartamento é uma graça, perto do centro de Porto de galinhas, 8min de carro. 5 min da praia de muro alto, que por sinal é lindaaaaa 💗 a ...</p>
-        </div>
-      </div>
-      <div class="review">
-        <img src="Img/avaliação/ca410e9e-6f66-4635-9554-e4af82bd812f.avif" alt="Sheila" class="reviewer-photo" />
-        <div class="review-content">
-          <div class="reviewer-name">Sheila</div>
-          <div class="review-date">janeiro de 2025</div>
-          <div class="review-stars">★★★★★</div>
-          <p>O local é amplo e dispõe de muitas comodidades. Parece até um clube. O apto é espaçoso e acomodou confortavelmente 9 pessoas. Carece de louças e alguns utensílios básicos mas ...</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="titulo-contato" id="contato" aria-label="Seção de contato">
-    <h2>Contato</h2>
-    <div class="linha-azul"></div>
-    <p>Entre em contato para mais informações</p>
-  </section>
-
-  <section class="contato-section container" aria-label="Formulário de contato e informações">
-      <div class="contato-info">
-        <h2>Fale Conosco</h2>
-        <p>Estamos disponíveis para atender você.</p>
-        <div class="info-item">
-          <div class="icon"><i class="fas fa-phone" aria-hidden="true"></i></div>
-          <div><p><a href="tel:+55819997362639">(81) 99736-2639</a> - Jonatas</p></div>
-          <div><p><a href="tel:+5581998070630">(81) 99807-0630</a> - Danielle</p></div>
-        </div>
-        <div class="info-item">
-          <div class="icon"><i class="fas fa-map-marker-alt" aria-hidden="true"></i></div>
-          <div><p>Estrada De Muro Alto - PE 09 Km 009, Ipojuca, PE</p></div>
-        </div>
-              <!-- Mapa atualizado -->
-        <div class="mapa-container">
-          <iframe 
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31570.85775764891!2d-35.01867882929309!3d-8.464600212327754!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x7aa93004caa6633%3A0xd6857f4d6ae5cd15!2sMuro%20Alto%20Condom%C3%ADnio%20Clube(MACC)!5e0!3m2!1spt-BR!2sbr!4v1750100120205!5m2!1spt-BR!2sbr" 
-            class="mapa-iframe"
-            allowfullscreen="" 
-            loading="lazy" 
-            referrerpolicy="no-referrer-when-downgrade"
-            aria-label="Mapa da localização do Beach Flats">
-          </iframe>
-        </div>
-      </div>
-     
-      <div class="contato-formulario">
-        <h2>Envie sua mensagem</h2>
-        <p>Responderemos em breve.</p>
-        <form action="https://api.staticforms.xyz/submit" method="POST">
-          <input type="hidden" name="accessKey" value="sf_6med3001b29b99c2cfgki9lm" />
-          <label for="nome">Nome</label>
-          <input type="text" id="nome" name="nome" placeholder="Nome" required />
-
-          <label for="email">E-mail</label>
-          <input type="email" id="email" name="email" placeholder="E-mail" required />
-
-          <label for="mensagem">Mensagem</label>
-          <textarea id="mensagem" name="mensagem" rows="5" placeholder="Mensagem" required></textarea>
-
-          <button type="submit">Enviar</button>
-        </form>
-      </div>
-    </section>
-
-  <a href="https://wa.me/558198070630?text=Olá, vim%20pelo%20site,%20gostaria%20de%20informações%20sobre%20hospedagem." target="_blank" rel="noopener noreferrer" class="whatsapp-float" aria-label="Fale conosco pelo WhatsApp">
-    <img src="img/whatsapp.png" alt="WhatsApp" width="70" height="70" />
-    <span class="sr-only">WhatsApp</span>
-  </a>
-
- <button id="backToTop" class="back-to-top" aria-label="Voltar ao topo" tabindex="0" type="button">
-  <i class="fas fa-chevron-up" aria-hidden="true"></i>
-</button>
-
-  <footer class="footer" role="contentinfo">
-    <div class="footer-container">
-      <div class="footer-col footer-logo">
-        <h2>Beach Flats</h2>
-        <p>Seu lugar perfeito para descansar em Porto de Galinhas.</p>
-        <div class="social-icons">
-          <a href="https://www.threads.com/@muroaltoap307?xmt=AQF0FX2O8k08wpVouDW9T2ZXGsZzJ8qTXGXSbVEsJnsKOCk" aria-label="Threads"><i class="fab fa-threads"></i></a>
-          <a href="https://www.instagram.com/muroaltoap307/" aria-label="Instagram"><i class="fab fa-instagram-square"></i></a>
-          <a href="https://www.instagram.com/beachflatstemporada/" aria-label="Instagram"><i class="fab fa-instagram-square"></i></a>
-        </div>
-      </div>
-      <div class="footer-col footer-links" aria-label="Links úteis">
-        <h3>Links Úteis</h3>
-        <ul>
-          <li><a href="index.html">Inicio</a></li>
-          <li><a href="#quarto">Condomínio</a></li>
-          <li><a href="Reserva.html">Reservas</a></li>
-          <li><a href="#contato">Contato</a></li>
-          <li><a href="#regras">Regras de acomodação</a></li>
-        </ul>
-      </div>
-      <div class="footer-col footer-pagamento" id="pagamento" aria-label="Formas de pagamento aceitas">
-        <h3>Formas de Pagamento</h3>
-        <ul>
-          <li><img src="Img/icons8-visa-48.png" alt="Visa" /></li>
-          <li><img src="Img/master.png" alt="Mastercard" /></li>
-          <li><img src="Img/DINHEIRO.png" alt="Dinheiro" /></li>
-          <li><img src="Img/PIX.png" alt="PIX" /></li>
-        </ul>
-      </div>
-      <div class="footer-col footer-contato" aria-label="Informações de contato">
-        <h3>Contato</h3>
-        <p><i class="fas fa-phone" aria-hidden="true"></i> <a href="tel:+5581999999999">(81) 99736-2639</a></p>
-        <p><i class="fas fa-phone" aria-hidden="true"></i> <a href="tel:+5581999999999">(81) 99807-0630</a></p>
-        <p><i class="fas fa-map-marker-alt" aria-hidden="true"></i> Estrada De Muro Alto - PE 09 Km 009, Ipojuca, PE</p>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      <p>&copy; 2025 Beach Flats. Todos os direitos reservados.</p>
-      <p>Desenvolvido por <a href="https://www.instagram.com/jm_marketingoficial/" target="_blank" rel="noopener">Jm Marketing Digital</a></p>
-    </div>
-  </footer>
-
-  <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
-<script src="https://cdn.jsdelivr.net/npm/flatpickr/dist/l10n/pt.js"></script>
-<script>
-  document.addEventListener('DOMContentLoaded', function() {
-    // 1. Date Picker
-    flatpickr("#checkin-checkout", {
-      mode: "range",
-      dateFormat: "d/m/Y",
-      minDate: "today",
-      locale: "pt",
-      showMonths: 2
-    });
-
-    // 2. Back to Top Button
-    const backToTopBtn = document.getElementById("backToTop");
-
-    window.addEventListener("scroll", () => {
-    if (window.pageYOffset > 300) {
-      backToTopBtn.classList.add("show");
-    } else {
-      backToTopBtn.classList.remove("show");
-    }
-  });
-
-    backToTopBtn.addEventListener("click", () => {
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth"
-    });
-   });
-    // 3. Multiple Image Carousels
-    const carousels = document.querySelectorAll('.quarto-carousel');
-    
-    carousels.forEach(carousel => {
-      const images = carousel.querySelectorAll('.carousel-image');
-      const prevBtn = carousel.querySelector('.prev-btn');
-      const nextBtn = carousel.querySelector('.next-btn');
-      let currentIndex = 0;
-      let autoSlideInterval;
-
-      function showImage(index) {
-        images.forEach((img, i) => {
-          img.classList.toggle('active', i === index);
-        });
-      }
-
-      function goToNext() {
-        currentIndex = (currentIndex + 1) % images.length;
-        showImage(currentIndex);
-        resetAutoSlide();
-      }
-
-      function goToPrev() {
-        currentIndex = (currentIndex - 1 + images.length) % images.length;
-        showImage(currentIndex);
-        resetAutoSlide();
-      }
-
-      function startAutoSlide() {
-        autoSlideInterval = setInterval(goToNext, 5000);
-      }
-
-      function resetAutoSlide() {
-        clearInterval(autoSlideInterval);
-        startAutoSlide();
-      }
-
-      // Event Listeners
-      nextBtn.addEventListener('click', goToNext);
-      prevBtn.addEventListener('click', goToPrev);
-
-      // Pause on hover
-      carousel.addEventListener('mouseenter', () => {
-        clearInterval(autoSlideInterval);
-      });
-
-      carousel.addEventListener('mouseleave', () => {
-        startAutoSlide();
-      });
-
-      // Initialize
-      showImage(currentIndex);
-      startAutoSlide();
-    });
-
-    // 4. WhatsApp Button (se necessário)
-    if (!document.querySelector('.whatsapp-float')) {
-      const whatsappBtn = document.createElement('a');
-      whatsappBtn.href = 'https://wa.me/5581998070630';
-      whatsappBtn.className = 'whatsapp-float';
-      whatsappBtn.innerHTML = '<img src="Img/whatsapp.png" alt="WhatsApp">';
-      document.body.appendChild(whatsappBtn);
-    }
-
-    // 5. Form Submission
-    const reservaForm = document.querySelector('.reserva-form');
-    if (reservaForm) {
-      reservaForm.addEventListener('submit', function(e) {
-        e.preventDefault();
-        alert("Reserva enviada com sucesso! Entraremos em contato em breve.");
-      });
-    }
-  });
-</script>
- <script src="script.js"></script>
+        window.open(link, '_blank');
+});
+        </script>
+        <script src="search-fix.js"></script>
+        <script src="script.js"></script>
 </body>
+
 </html>
