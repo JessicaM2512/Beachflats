@@ -1,15 +1,16 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Apartamento completo em Porto de Galinhas - 2 quartos, Wi-Fi, piscina e vista para o mar. Reserve agora seu apartamento no Beach Flats!">
-  <meta name="robots" content="index, follow">
-  <title>Apartamento Completo - BeachFlats Muro Alto</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
-  <link rel="stylesheet" href="styles1.css" />
-  <link rel="icon" href="Img/favicon.ico" type="image/x-icon">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Apartamento completo em Porto de Galinhas - 2 quartos, Wi-Fi, piscina e vista para o mar. Reserve agora seu apartamento no Beach Flats!">
+    <meta name="robots" content="index, follow">
+    <title>BeachFlats Muro Alto e Gravatá</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <link rel="stylesheet" href="styles1.css" />
+    <link rel="icon" href="Img/favicon.ico" type="image/x-icon">
     <!-- Para Apple/Safari -->
     <link rel="apple-touch-icon" sizes="180x180" href="Img/favicon.ico">
 
@@ -20,354 +21,322 @@
     <meta name="msapplication-TileImage" content="cImg/favicon.ico">
     <meta name="msapplication-TileColor" content="#007b8f">
     <link rel="shortcut icon" href="Img/favicon.ico" type="image/x-icon">
-  </head>
-  <body>
+</head>
+
+<body>
     <header class="novo-header" role="banner">
-      <div class="header-container">
-      <div class="logo">BeachFlats Muro Alto</div>
-      <button class="hamburger" aria-label="Abrir menu" aria-expanded="false" aria-controls="mobile-menu">
-        <span class="hamburger-line"></span>
-        <span class="hamburger-line"></span>
-        <span class="hamburger-line"></span>
-      </button>
-      <nav class="menu" id="mobile-menu" aria-label="Menu principal">
-        <a href="index.html">Home</a>
-        <a href="index.html#quartos">Apartamento</a>
-        <a href="Reserva.html">Reservas</a>
-        <a href="index.html#contato">Contato</a>
-        <a href="regras.html">Regras</a>
-        <a href="index.html#avaliação">Avaliações</a>
-      </nav>
-        <a href="Reserva.html" class="btn-cta">Reservar</a>
-      </div>
+        <div class="header-container">
+            <div class="logo">BeachFlats Muro Alto</div>
+            <button class="hamburger" aria-label="Abrir menu" aria-expanded="false" aria-controls="mobile-menu">
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+            </button>
+            <nav class="menu" id="mobile-menu" aria-label="Menu principal">
+                <a href="index.html">Home</a>
+                <a href="index.html#quartos">Apartamentos</a>
+                <a href="Reserva.html?id=apt-torre3-3andar">Reservas</a>
+                <a href="index.html#contato">Contato</a>
+                <a href="regras.html">Regras</a>
+                <a href="index.html#avaliação">Avaliações</a>
+            </nav>
+            <a href="Reserva.html?id=apt-torre3-3andar" class="btn-cta">Reservar</a>
+        </div>
     </header>
-      <script>
-      document.addEventListener('DOMContentLoaded', function() {
-        function getQueryParams() {
-          const params = {};
-          window.location.search.substring(1).split("&").forEach(pair => {
-            const [key, value] = pair.split("=");
-            if (key) params[decodeURIComponent(key)] = decodeURIComponent(value);
-          });
-          return params;
-        }
-
-        const params = getQueryParams();
-        console.log('Query params:', params);
-      const btnReservar = document.getElementById('btn-reservar');
-      btnReservar.addEventListener('click', function(event) {
-        event.preventDefault();
-        console.log('btn-reservar clicked');
-        console.log('Params:', params);
-        try {
-          if (params.checkin && params.checkout && params.hospedes) {
-            // Fix parameter names if needed
-            const checkin = params.checkin;
-            const checkout = params.checkout;
-            const hospedes = params.hospedes;
-            const url = new URL('Reserva.html', window.location.origin);
-            url.searchParams.set('checkin', checkin);
-            url.searchParams.set('checkout', checkout);
-            url.searchParams.set('hospedes', hospedes);
-            console.log('Redirecting to:', url.toString());
-            // Additional debug log before redirect
-            console.log('About to redirect to Reserva.html with params');
-            window.location.assign(url.toString());
-          } else {
-            console.log('Missing reservation data, cannot redirect');
-            alert('Dados de reserva incompletos. Por favor, selecione as datas e o número de hóspedes.');
-          }
-        } catch (error) {
-          console.error('Error during redirect:', error);
-          alert('Ocorreu um erro ao tentar redirecionar para a página de reserva.');
-        }
-      });
-    </script>
     <main class="container" role="main">
-      <div class="detalhes-container">
-        <article class="quarto-detalhes-content">
-          <!-- Carrossel de Imagens -->
-          <div class="carousel-container" aria-label="Galeria de imagens do apartamento">
-            <button class="carousel-btn prev-btn" aria-label="Imagem anterior">&#10094;</button>
-            <div class="carousel-images">
-              <img src="img/FullSizeRender 5.JPG" alt="Sala de estar do apartamento" class="carousel-image active" />
-              <img src="img/FullSizeRender 6.JPG" alt="Sala de estar do apartamento" class="carousel-image" />
-              <img src="img/IMG_1058.JPG" alt="Cozinha equipada" class="carousel-image" />
-              <img src="img/QUARTO1.avif" alt="Quarto 1" class="carousel-image" />
-              <img src="Img/0911162d-ed2f-4b1c-9dc1-7c465d8a1ae2.avif" alt="SUITE" class="carousel-image" />
-              <img src="img/SUITE.jpeg" alt="Quarto 3" class="carousel-image" />
-              <img src="img/FullSizeRender 2.JPG" alt="Banheiro moderno" class="carousel-image" />
-              <img src="Img/6af7e51d-174d-4e83-b242-fe7d87dd2af4.avif" alt="Banheiro 2" class="carousel-image" />
-              <img src="Img/varanda.avif" alt="Varanda" class="carousel-image" />
-            </div>
-            <button class="carousel-btn next-btn" aria-label="Próxima imagem">&#10095;</button>
-          </div>
+        <div class="detalhes-container">
+            <article class="quarto-detalhes-content">
+                <!-- Carrossel de Imagens -->
+                <div class="carousel-container" aria-label="Galeria de imagens do apartamento">
+                    <button class="carousel-btn prev-btn" aria-label="Imagem anterior">&#10094;</button>
+                    <div class="carousel-images">
+                        <img src="img/FullSizeRender 5.JPG" alt="Sala de estar do apartamento" class="carousel-image active" />
+                        <img src="img/FullSizeRender 6.JPG" alt="Sala de estar do apartamento" class="carousel-image active" />
+                        <img src="img/IMG_1058.JPG" alt="Cozinha equipada" class="carousel-image" />
+                        <img src="img/QUARTO1.avif" alt="Quarto 1" class="carousel-image" />
+                        <img src="Img/0911162d-ed2f-4b1c-9dc1-7c465d8a1ae2.avif" alt="SUITE" class="carousel-image" />
+                        <img src="img/SUITE.jpeg" alt="Quarto 3" class="carousel-image" />
+                        <img src="img/FullSizeRender 2.JPG" alt="Banheiro moderno" class="carousel-image" />
+                        <img src="Img/6af7e51d-174d-4e83-b242-fe7d87dd2af4.avif" alt="Banheiro 2" class="carousel-image" />
+                        <img src="Img/varanda.avif" alt="Varanda" class="carousel-image" />
+                    </div>
+                    <button class="carousel-btn next-btn" aria-label="Próxima imagem">&#10095;</button>
+                </div>
 
-          <!-- Informações do Apartamento -->
-          <section class="quarto-info" aria-label="Informações do apartamento">
-            <h1>Apartamento Completo em Porto de Galinhas</h1>
-            
-            <div class="quarto-icons" aria-label="Características do apartamento">
-              <span><i class="fas fa-home"></i> Apartamento Mobiliado</span>
-              <span><i class="fas fa-bed"></i> 3 quartos</span>
-              <span><i class="fas fa-user-friends"></i> Até 9 hóspedes</span>
-              <span><i class="fas fa-bath"></i> 2 banheiro</span>
-            </div>
-            
-            <div class="descricao-detalhada">
-              <p>Flat para até 9 pessoas no total já incluindo crianças, condomínio resort fechado, piscina com 2,500 m² de lâmina de d’água, parque aquático, com deck, prainha, ilhas, e bar-cascata. Além de campo de futebol, gazebo, salão de jogos, sauna, parque infantil, churrasqueira que pode ser locada para uso direto com a recepção do condomínio e restaurante.
-                Condomínio com amplo estacionamento, vaga de um carro por hóspede.</p>
-                <p>Localizado na estrada de Porto de Galinhas, com fácil acesso de 1km as praia de Muro Alto, Cupe e a 5 minutos de carro para o centro Porto de Galinhas!</p>
-              
-              <h3>O espaço</h3>
-            <p>Nosso apartamento foi recentemente reformado e conta com:</p>
-            <ul>
-              <li>Sala de estar ampla com sofá e mesa de jantar</li>
-              <li>Cozinha totalmente equipada (fogão, geladeira, micro-ondas, utensílios)</li>
-              <li>Varanda com rede e vista parcial para o Jardim</li>
-              <li>Wi-Fi de alta velocidade</li>
-              <li>TV a cabo</li>
-              <li>Ar-condicionado em todos os ambientes</li>
-            </ul>
-          </div>
-        </section>
+                <!-- Informações do Apartamento -->
+                <section class="quarto-info" aria-label="Informações do apartamento">
+                    <h1>Apto 3º Andar/ Torre 3</h1>
 
-        <!-- Comodidades -->
-        <section class="amenities-section" aria-label="Comodidades do apartamento">
-          <h2>O que este lugar oferece</h2>
-          <div class="amenities-grid">
-            <div class="amenity-item">
-              <i class="fas fa-wifi"></i>
-              <span>Wi-Fi</span>
-            </div>
-            <div class="amenity-item">
-              <i class="fas fa-swimming-pool"></i>
-              <span>Piscina compartilhada</span>
-            </div>
-            <div class="amenity-item">
-              <i class="fas fa-umbrella-beach"></i>
-              <span>Vista para o jardim</span>
-            </div>
-            <div class="amenity-item">
-              <i class="fas fa-parking"></i>
-              <span>Estacionamento gratuito</span>
-            </div>
-            <div class="amenity-item">
-              <i class="fas fa-utensils"></i>
-              <span>Cozinha equipada</span>
-            </div>
-            <div class="amenity-item">
-              <i class="fas fa-snowflake"></i>
-              <span>Ar-condicionado</span>
-            </div>
-            <div class="amenity-item">
-              <i class="fas fa-tv"></i>
-              <span>TV</span>
-            </div>
-            <div class="amenity-item">
-              <i class="fas fa-wind"></i>
-              <span>Sauna privativa</span>
-            </div>
-            <div class="amenity-item">
-              <i class="fas fa-bath"></i>
-              <span>Banheiro privativo</span>
-            </div>
-            <div class="amenity-item">
-              <i class="fas fa-tshirt"></i>
-              <span>Cobertores e travesseiros extras</span>
-            </div>
-          </div>
-        </section>
+                    <div class="quarto-icons" aria-label="Características do apartamento">
+                        <span><i class="fas fa-home"></i> Apartamento Mobiliado</span>
+                        <span><i class="fas fa-bed"></i> 3 quartos</span>
+                        <span><i class="fas fa-user-friends"></i> Até 9 hóspedes</span>
+                        <span><i class="fas fa-bath"></i> 2 banheiro</span>
+                    </div>
 
-        <!-- Quartos e Camas -->
-        <section class="tipo-de-cama-section" aria-label="Tipos de cama">
-          <h2>Onde você vai dormir</h2>
-          <div class="camas-grid">
-            <div class="cama-card">
-              <i class="fas fa-bed"></i>
-              <h4>Quarto 1</h4>
-              <div>Beliche e Colchão no chão</div>
-              <div>Ar-condicionado, Blackout nas cortinas, Cobertores e travesseiros (extras Ferro de passar).</div>
-            </div>
-            <div class="cama-card">
-              <i class="fas fa-bed"></i>
-              <h4>Quarto 2</h4>
-              <div>Cama de casal</div>
-              <div>Ar-condicionado, Blackout nas cortinas, Cobertores e travesseiros (extras Local para guardar as roupas e Ferro de passar).</div>
-            </div>
-            <div class="cama-card">
-              <i class="fas fa-bed"></i>
-              <h4>Quarto 3</h4>
-              <div>Cama queen e Colchão no chão</div>
-              <div>Ar-condicionado, Blackout nas cortinas, Ferro de passar, Roupa de cama, TV, Local para guardar as roupas.</div>
-            </div>
-          </div>
-        </section>
+                    <div class="descricao-detalhada">
+                        <p>Flat para até 9 pessoas no total já incluindo crianças, condomínio resort fechado, piscina com 2,500 m² de lâmina de d’água, parque aquático, com deck, prainha, ilhas, e bar-cascata. Além de campo de futebol, gazebo, salão de
+                            jogos, sauna, parque infantil, churrasqueira que pode ser locada para uso direto com a recepção do condomínio e restaurante. Condomínio com amplo estacionamento, vaga de um carro por hóspede.</p>
+                        <p>Localizado na estrada de Porto de Galinhas, com fácil acesso de 1km as praia de Muro Alto, Cupe e a 5 minutos de carro para o centro Porto de Galinhas!</p>
 
-        <!-- Regras -->
-        <section class="regras-section" aria-label="Regras da acomodação">
-          <h2>Regras da casa</h2>
-          <div class="regras-list">
-            <div><span class="sim">✔</span> Check-in: 14:00</div>
-            <div><span class="sim">✔</span> Checkout: 11:00</div>
-            <div><span class="sim">✔</span> Aceita crianças</div>
-            <div><span class="nao">✘</span> Não permite animais</div>
-            <div><span class="nao">✘</span> Não permite festas/eventos</div>
-            <div><span class="nao">✘</span> Não fumar</div>
-          </div>
-        </section>
+                        <h3>O espaço</h3>
+                        <p>Nosso apartamento foi recentemente reformado e conta com:</p>
+                        <ul>
+                            <li>Sala de estar ampla com sofá e mesa de jantar</li>
+                            <li>Cozinha totalmente equipada (fogão, geladeira, micro-ondas, utensílios)</li>
+                            <li>Varanda com rede e vista parcial para o Jardim</li>
+                            <li>Wi-Fi de alta velocidade</li>
+                            <li>TV a cabo</li>
+                            <li>Ar-condicionado em todos os ambientes</li>
+                        </ul>
+                    </div>
+                </section>
 
-        <!-- Disponibilidade -->
-        <section class="disponibilidade-section">
-          <h2>Disponibilidade</h2>
-          <p>O apartamento está disponível para reservas com no mínimo 2 noites. Entre em contato para verificar datas específicas.</p>
-        </section>
-      </article>
+                <!-- Comodidades -->
+                <section class="amenities-section" aria-label="Comodidades do apartamento">
+                    <h2>O que este lugar oferece</h2>
+                    <div class="amenities-grid">
+                        <div class="amenity-item">
+                            <i class="fas fa-wifi"></i>
+                            <span>Wi-Fi</span>
+                        </div>
+                        <div class="amenity-item">
+                            <i class="fas fa-swimming-pool"></i>
+                            <span>Piscina compartilhada</span>
+                        </div>
+                        <div class="amenity-item">
+                            <i class="fas fa-umbrella-beach"></i>
+                            <span>Vista para o jardim</span>
+                        </div>
+                        <div class="amenity-item">
+                            <i class="fas fa-parking"></i>
+                            <span>Estacionamento gratuito</span>
+                        </div>
+                        <div class="amenity-item">
+                            <i class="fas fa-utensils"></i>
+                            <span>Cozinha equipada</span>
+                        </div>
+                        <div class="amenity-item">
+                            <i class="fas fa-snowflake"></i>
+                            <span>Ar-condicionado</span>
+                        </div>
+                        <div class="amenity-item">
+                            <i class="fas fa-tv"></i>
+                            <span>TV</span>
+                        </div>
+                        <div class="amenity-item">
+                            <i class="fas fa-wind"></i>
+                            <span>Sauna privativa</span>
+                        </div>
+                        <div class="amenity-item">
+                            <i class="fas fa-bath"></i>
+                            <span>Banheiro privativo</span>
+                        </div>
+                        <div class="amenity-item">
+                            <i class="fas fa-tshirt"></i>
+                            <span>Cobertores e travesseiros extras</span>
+                        </div>
+                    </div>
+                </section>
 
-      <!-- Barra lateral de reserva -->
-      <aside class="booking-section">
-        <h3>Reserve agora!</h3>
-        
-        <div class="preco-reserva">
-          <small>Diárias a partir de</small>
-          <span>R$ 350</span>
-           <small>Por Noite</small>
+                <!-- Quartos e Camas -->
+                <section class="tipo-de-cama-section" aria-label="Tipos de cama">
+                    <h2>Onde você vai dormir</h2>
+                    <div class="camas-grid">
+                        <div class="cama-card">
+                            <i class="fas fa-bed"></i>
+                            <h4>Quarto 1</h4>
+                            <div>Beliche e Colchão no chão</div>
+                            <div>Ar-condicionado, Blackout nas cortinas, Cobertores e travesseiros (extras Ferro de passar).</div>
+                        </div>
+                        <div class="cama-card">
+                            <i class="fas fa-bed"></i>
+                            <h4>Quarto 2</h4>
+                            <div>Cama de casal</div>
+                            <div>Ar-condicionado, Blackout nas cortinas, Cobertores e travesseiros (extras Local para guardar as roupas e Ferro de passar).</div>
+                        </div>
+                        <div class="cama-card">
+                            <i class="fas fa-bed"></i>
+                            <h4>Quarto 3</h4>
+                            <div>Cama queen e Colchão no chão</div>
+                            <div>Ar-condicionado, Blackout nas cortinas, Ferro de passar, Roupa de cama, TV, Local para guardar as roupas.</div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Regras -->
+                <section class="regras-section" aria-label="Regras da acomodação">
+                    <h2>Regras da casa</h2>
+                    <div class="regras-list">
+                        <div><span class="sim">✔</span> Check-in: 14:00</div>
+                        <div><span class="sim">✔</span> Checkout: 11:00</div>
+                        <div><span class="sim">✔</span> Aceita crianças</div>
+                        <div><span class="nao">✘</span> Não permite animais</div>
+                        <div><span class="nao">✘</span> Não permite festas/eventos</div>
+                        <div><span class="nao">✘</span> Não fumar</div>
+                    </div>
+                </section>
+
+                <!-- Disponibilidade -->
+                <section class="disponibilidade-section">
+                    <h2>Disponibilidade</h2>
+                    <p>O apartamento está disponível para reservas com no mínimo 2 noites. Entre em contato para verificar datas específicas.</p>
+                </section>
+            </article>
+
+            <!-- Barra lateral de reserva -->
+            <aside class="booking-section">
+                <h3>Reserve agora</h3>
+
+                <div class="preco-reserva">
+                    <small>Diárias a partir de</small>
+                    <span>R$ 350</span>
+                    <small>Por Noite</small>
+                </div>
+
+                <form class="form-reserva" id="formReserva">
+                    <div class="input-group">
+                        <label for="dateRange">Período</label>
+                        <input type="text" id="dateRange" name="dateRange" placeholder="Selecione o período" readonly required>
+                        <input type="hidden" id="checkin" name="checkin" required>
+                        <input type="hidden" id="checkout" name="checkout" required>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="hospedes">Hóspedes</label>
+                        <select id="hospedes" name="hospedes" required>
+                            <option value="1">1 hóspede</option>
+                            <option value="2">2 hóspedes</option>
+                            <option value="3">3 hóspedes</option>
+                            <option value="4">4 hóspedes</option>
+                            <option value="5">5 hóspedes</option>
+                            <option value="6">6 hóspedes</option>
+                            <option value="7">7 hóspedes</option>
+                            <option value="8">8 hóspedes</option>
+                            <option value="9" selected>9 hóspedes</option>
+                        </select>
+                    </div>
+
+                    <button type="submit" class="btn-email">Reservar</button>
+                </form>
+                <div class="info-adicional">
+                    <p><i class="fas fa-info-circle"></i> Sem taxas de reserva</p>
+                    <p><i class="fas fa-credit-card"></i> Pagamento seguro</p>
+                </div>
+            </aside>
         </div>
-        
-        <form class="form-reserva" id="formReserva">
-          <div class="input-group">
-            <label for="checkin">Check-in</label>
-            <input type="date" id="checkin" name="checkin" required>
-          </div>
-          
-          <div class="input-group">
-            <label for="checkout">Check-out</label>
-            <input type="date" id="checkout" name="checkout" required>
-          </div>
-          
-          <div class="input-group">
-            <label for="hospedes">Hóspedes</label>
-            <select id="hospedes" name="hospedes" required>
-              <option value="1">1 hóspede</option>
-              <option value="2">2 hóspedes</option>
-              <option value="3">3 hóspedes</option>
-              <option value="4">4 hóspedes</option>
-              <option value="5">5 hóspedes</option>
-              <option value="6">6 hóspedes</option>
-              <option value="7">7 hóspedes</option>
-              <option value="8">8 hóspedes</option>
-              <option value="9" selected>9 hóspedes</option>
-            </select>
-          </div>
-          
-           <button type="submit" class="btn-email">Reservar</button>
-        </form>
-        
-        <div class="info-adicional">
-          <p><i class="fas fa-info-circle"></i> Sem taxas de reserva</p>
-          <p><i class="fas fa-credit-card"></i> Pagamento seguro</p>
+    </main>
+    <a href="https://wa.me/558198070630?text=Olá, vim%20pelo%20site,%20gostaria%20de%20informações%20sobre%20hospedagem." target="_blank" rel="noopener noreferrer" class="whatsapp-float" aria-label="Fale conosco pelo WhatsApp">
+        <img src="img/whatsapp.png" alt="WhatsApp" width="70" height="70" />
+        <span class="sr-only">WhatsApp</span>
+    </a>
+    <button class="back-to-top" aria-label="Voltar ao topo" tabindex="0" type="button">
+        <i class="fas fa-chevron-up" aria-hidden="true"></i>
+    </button>
+
+    <footer class="footer" role="contentinfo">
+        <div class="footer-container">
+            <div class="footer-col footer-logo">
+                <h2>Beach Flats</h2>
+                <p>Seu lugar perfeito para descansar em Porto de Galinhas.</p>
+                <div class="social-icons">
+                    <a href="https://www.threads.com/@muroaltoap307?xmt=AQF0FX2O8k08wpVouDW9T2ZXGsZzJ8qTXGXSbVEsJnsKOCk" aria-label="Threads"><i class="fab fa-threads"></i></a>
+                    <a href="https://www.instagram.com/muroaltoap307/" aria-label="Instagram"><i class="fab fa-instagram-square"></i></a>
+                    <a href="https://www.instagram.com/beachflatstemporada/" aria-label="Instagram"><i class="fab fa-instagram-square"></i></a>
+                </div>
+            </div>
+            <div class="footer-col footer-links" aria-label="Links úteis">
+                <h3>Links Úteis</h3>
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="#quarto">Condomínio</a></li>
+                    <li><a href="#contato">Contato</a></li>
+                    <li><a href="#regras.html">Regras de acomodação</a></li>
+                </ul>
+            </div>
+            <div class="footer-col footer-pagamento" id="pagamento" aria-label="Formas de pagamento aceitas">
+                <h3>Formas de Pagamento</h3>
+                <ul>
+                    <li><img src="Img/icons8-visa-48.png" alt="Visa" /></li>
+                    <li><img src="Img/master.png" alt="Mastercard" /></li>
+                    <li><img src="Img/DINHEIRO.png" alt="Dinheiro" /></li>
+                    <li><img src="Img/PIX.png" alt="PIX" /></li>
+                </ul>
+            </div>
+            <div class="footer-col footer-contato" aria-label="Informações de contato">
+                <h3>Contato</h3>
+                <p><i class="fas fa-phone" aria-hidden="true"></i> <a href="tel:+5581999999999">(81) 99736-2639</a></p>
+                <p><i class="fas fa-phone" aria-hidden="true"></i> <a href="tel:+5581999999999">(81) 99807-0630</a></p>
+                <p><i class="fas fa-envelope" aria-hidden="true"></i> <a href="mailto:dani.tst28@gmail.com">dani.tst28@gmail.com</a></p>
+                <p><i class="fas fa-map-marker-alt" aria-hidden="true"></i> Estrada De Muro Alto - PE 09 Km 009, Ipojuca, PE</p>
+            </div>
         </div>
-      </aside>
-    </div>
-  </main>
-   <a href="https://wa.me/558198070630?text=Olá, vim%20pelo%20site,%20gostaria%20de%20informações%20sobre%20hospedagem." target="_blank" rel="noopener noreferrer" class="whatsapp-float" aria-label="Fale conosco pelo WhatsApp">
-    <img src="img/whatsapp.png" alt="WhatsApp" width="70" height="70" />
-    <span class="sr-only">WhatsApp</span>
-  </a>
-  <button class="back-to-top" aria-label="Voltar ao topo" tabindex="0" type="button">
-    <i class="fas fa-chevron-up" aria-hidden="true"></i>
-  </button>
-
-  <footer class="footer" role="contentinfo">
-    <div class="footer-container">
-      <div class="footer-col footer-logo">
-        <h2>Beach Flats</h2>
-        <p>Seu lugar perfeito para descansar em Porto de Galinhas.</p>
-        <div class="social-icons">
-          <a href="https://www.threads.com/@muroaltoap307?xmt=AQF0FX2O8k08wpVouDW9T2ZXGsZzJ8qTXGXSbVEsJnsKOCk" aria-label="Threads"><i class="fab fa-threads"></i></a>
-          <a href="https://www.instagram.com/muroaltoap307/" aria-label="Instagram"><i class="fab fa-instagram-square"></i></a>
-          <a href="https://www.instagram.com/beachflatstemporada/" aria-label="Instagram"><i class="fab fa-instagram-square"></i></a>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Beach Flats. Todos os direitos reservados.</p>
+            <p>Desenvolvido por <a href="https://www.instagram.com/jm_marketingoficial/" target="_blank" rel="noopener">Jm Marketing Digital</a></p>
         </div>
-      </div>
-      <div class="footer-col footer-links" aria-label="Links úteis">
-        <h3>Links Úteis</h3>
-        <ul>
-          <li><a href="index.html">Inicio</a></li>
-          <li><a href="#quarto">Condomínio</a></li>
-          <li><a href="Reserva.html">Reservas</a></li>
-          <li><a href="#contato">Contato</a></li>
-          <li><a href="#regras">Regras de acomodação</a></li>
-        </ul>
-      </div>
-      <div class="footer-col footer-pagamento" id="pagamento" aria-label="Formas de pagamento aceitas">
-        <h3>Formas de Pagamento</h3>
-        <ul>
-          <li><img src="Img/icons8-visa-48.png" alt="Visa" /></li>
-          <li><img src="Img/master.png" alt="Mastercard" /></li>
-          <li><img src="Img/DINHEIRO.png" alt="Dinheiro" /></li>
-          <li><img src="Img/PIX.png" alt="PIX" /></li>
-        </ul>
-      </div>
-      <div class="footer-col footer-contato" aria-label="Informações de contato">
-        <h3>Contato</h3>
-        <p><i class="fas fa-phone" aria-hidden="true"></i> <a href="tel:+5581999999999">(81) 99736-2639</a></p>
-        <p><i class="fas fa-phone" aria-hidden="true"></i> <a href="tel:+5581999999999">(81) 99807-0630</a></p>
-        <p><i class="fas fa-envelope" aria-hidden="true"></i> <a href="mailto:dani.tst28@gmail.com">dani.tst28@gmail.com</a></p>
-        <p><i class="fas fa-map-marker-alt" aria-hidden="true"></i> Estrada De Muro Alto - PE 09 Km 009, Ipojuca, PE</p>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      <p>&copy; 2025 Beach Flats. Todos os direitos reservados.</p>
-      <p>Desenvolvido por <a href="https://www.instagram.com/jm_marketingoficial/" target="_blank" rel="noopener">Jm Marketing Digital</a></p>
-    </div>
-  </footer>
+    </footer>
 
-  <script>
-    // Captura parâmetros da URL
-    function getQueryParams() {
-      const params = {};
-      const queryString = window.location.search.substring(1);
-      const pairs = queryString.split('&');
-      
-      pairs.forEach(pair => {
-        const [key, value] = pair.split('=');
-        if (key) params[decodeURIComponent(key)] = decodeURIComponent(value || '');
-      });
-      
-      return params;
-    }
+     <!-- Scripts -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr/dist/l10n/pt.js"></script>
 
-    // Preenche formulário com dados da URL
+    <script>
+      //Função para capturar parâmetros da URL
+     function getQueryParams() {
+        const params = {};
+        const queryString = window.location.search.substring(1);
+        const pairs = queryString.split('&');
+        
+        pairs.forEach(pair => {
+            const [key, value] = pair.split('=');
+            if (key) params[decodeURIComponent(key)] = decodeURIComponent(value || '');
+        });
+        
+        return params;
+     }
+
+    // Configuração do formulário
     document.addEventListener('DOMContentLoaded', function() {
-      const params = getQueryParams();
-      
-      if (params.checkin) {
-        document.getElementById('checkin').value = params.checkin;
-      }
-      if (params.checkout) {
-        document.getElementById('checkout').value = params.checkout;
-      }
-      if (params.hospedes) {
-        document.getElementById('hospedes').value = params.hospedes;
-      }
-
-      // Configura envio do formulário
-      document.getElementById('formReserva').addEventListener('submit', function(e) {
-        e.preventDefault();
+        const params = getQueryParams();
+        const aptId = "apt-torre3-3andar"; // ID correto do apartamento
         
-        const checkin = document.getElementById('checkin').value;
-        const checkout = document.getElementById('checkout').value;
-        const hospedes = document.getElementById('hospedes').value;
+        // Preenche formulário com dados da URL
+        if (params.checkin) document.getElementById('checkin').value = params.checkin;
+        if (params.checkout) document.getElementById('checkout').value = params.checkout;
+        if (params.hospedes) document.getElementById('hospedes').value = params.hospedes;
+       // Configura envio do formulário
+        document.getElementById('formReserva').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const checkin = document.getElementById('checkin').value;
+            const checkout = document.getElementById('checkout').value;
+            const hospedes = document.getElementById('hospedes').value;
         
         if (checkin && checkout && hospedes) {
-          window.location.href = `Reserva.html?checkin=${checkin}&checkout=${checkout}&hospedes=${hospedes}`;
+          window.location.href = `Reserva.html?id=apt-torre3-3andar&checkin=${checkin}&checkout=${checkout}&hospedes=${hospedes}`;
         } else {
           alert('Por favor, preencha todos os campos.');
         }
       });
+       // Botão voltar ao topo
+        const backToTopButton = document.querySelector('.back-to-top');
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                backToTopButton.style.display = 'block';
+            } else {
+                backToTopButton.style.display = 'none';
+            }
+        });
+
+        backToTopButton.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
     });
   </script>
-    <script src="script.js"></script>
-    <script src="quarto-detalhes-fix.js"></script>
-  </body>
+     <script src="script.js"></script>
+     <script src="quarto-detalhes-fix.js"></script>
+</body>
+
 </html>
