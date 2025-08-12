@@ -268,7 +268,7 @@
         </div>
     </footer>
 
-    <!-- Scripts -->
+     <!-- Scripts -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
     <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
     <script src="https://cdn.jsdelivr.net/npm/flatpickr/dist/l10n/pt.js"></script>
@@ -306,7 +306,7 @@
             const hospedes = document.getElementById('hospedes').value;
         
         if (checkin && checkout && hospedes) {
-          window.location.href = `Reserva.html?id=apt-torre3-3andar-2quartos%checkin=${checkin}&checkout=${checkout}&hospedes=${hospedes}&id=${aptId}`;
+          window.location.href = `Reserva.html?id=apt-torre3-3andar-2quartos&checkin=${checkin}&checkout=${checkout}&hospedes=${hospedes}&id=${aptId}`;
         } else {
           alert('Por favor, preencha todos os campos.');
         }
