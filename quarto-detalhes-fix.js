@@ -58,6 +58,79 @@ document.addEventListener('DOMContentLoaded', function() {
       }
     });
   }
+
+  // Fetch blocked dates from backend and initialize flatpickr datepicker
+  fetch('php/blocked_dates.php')
+    .then(response => response.json())
+    .then(blockedDates => {
+      const disabledDates = blockedDates.map(dateStr => dateStr);
+
+      // Initialize flatpickr on #dateRange input with range mode and 2 months display
+      flatpickr("#dateRange", {
+        mode: "range",
+        dateFormat: "d/m/Y",
+        disable: disabledDates,
+        minDate: "today",
+        locale: "pt",
+        showMonths: 2,
+        onChange: function(selectedDates, dateStr, instance) {
+          if (selectedDates.length === 2) {
+            // Set hidden inputs for checkin and checkout in Y-m-d format for backend
+            document.getElementById('checkin').value = instance.formatDate(selectedDates[0], "Y-m-d");
+            document.getElementById('checkout').value = instance.formatDate(selectedDates[1], "Y-m-d");
+            // Set visible input value as "DD/MM/YYYY a DD/MM/YYYY"
+            document.getElementById('dateRange').value = instance.formatDate(selectedDates[0], "d/m/Y") + " a " + instance.formatDate(selectedDates[1], "d/m/Y");
+          } else {
+            document.getElementById('checkin').value = "";
+            document.getElementById('checkout').value = "";
+            document.getElementById('dateRange').value = "";
+          }
+        }
+      });
+    })
+    .catch(error => {
+      console.error('Error fetching blocked dates:', error);
+    });
+
+  // Preencher campos com dados salvos da reserva
+  const savedReservation = localStorage.getItem('beachFlatsReservation');
+  if (savedReservation) {
+    try {
+      const reservationData = JSON.parse(savedReservation);
+      if (reservationData.checkin) {
+        const checkinInput = document.getElementById('checkin');
+        if (checkinInput) checkinInput.value = reservationData.checkin;
+      }
+      if (reservationData.checkout) {
+        const checkoutInput = document.getElementById('checkout');
+        if (checkoutInput) checkoutInput.value = reservationData.checkout;
+      }
+      if (reservationData.guests) {
+        const guestsSelect = document.getElementById('hospedes');
+        if (guestsSelect) guestsSelect.value = reservationData.guests;
+      }
+      // Preencher o input dateRange com o período formatado
+      if (reservationData.checkin && reservationData.checkout) {
+        const dateRangeInput = document.getElementById('dateRange');
+        if (dateRangeInput) {
+          // Função para criar data sem problema de timezone
+          function parseDate(dateStr) {
+            const parts = dateStr.split('-');
+            return new Date(parts[0], parts[1] - 1, parts[2]);
+          }
+          const checkinDate = parseDate(reservationData.checkin);
+          const checkoutDate = parseDate(reservationData.checkout);
+          // Formatar para DD/MM/YYYY com zero à esquerda
+          const pad = (n) => n.toString().padStart(2, '0');
+          const formattedCheckin = `${pad(checkinDate.getDate())}/${pad(checkinDate.getMonth() + 1)}/${checkinDate.getFullYear()}`;
+          const formattedCheckout = `${pad(checkoutDate.getDate())}/${pad(checkoutDate.getMonth() + 1)}/${checkoutDate.getFullYear()}`;
+          dateRangeInput.value = `${formattedCheckin} a ${formattedCheckout}`;
+        }
+      }
+    } catch (e) {
+      console.error('Erro ao carregar dados da reserva:', e);
+    }
+  }
 });
 function initCarousel(carouselContainer) {
   const images = carouselContainer.querySelectorAll('.carousel-image');
