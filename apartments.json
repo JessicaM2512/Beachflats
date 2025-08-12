@@ -1,0 +1,115 @@
+[
+  {
+    "id": "apt-torre3-3andar",
+    "name": "Apto 3º Andar/ Torre 3",
+    "address": "Muro Alto",
+    "rooms": 3,
+    "bathrooms": 2,
+    "maxGuests": 9,
+    "beds": 3,
+    "images": [
+      "img/FullSizeRender 5.JPG",
+      "img/FullSizeRender 6.JPG",
+      "img/IMG_1058.JPG",
+      "img/QUARTO1.avif",
+      "Img/0911162d-ed2f-4b1c-9dc1-7c465d8a1ae2.avif",
+      "img/SUITE.jpeg",
+      "img/FullSizeRender 2.JPG",
+      "Img/6af7e51d-174d-4e83-b242-fe7d87dd2af4.avif",
+      "Img/varanda.avif"
+    ]
+  },
+  {
+    "id": "apt-torre3-4andar",
+    "name": "Apto 4º Andar/ Torre 3",
+    "address": "Muro Alto",
+    "rooms": 1,
+    "bathrooms": 1,
+    "maxGuests": 5,
+    "beds": 1,
+    "images": [
+      "Img/1 quarto/IMG_0822.JPG",
+      "Img/1 quarto/IMG_0823.JPG",
+      "Img/1 quarto/IMG_0824.JPG",
+      "Img/1 quarto/IMG_0825.JPG",
+      "Img/1 quarto/IMG_0826.JPG",
+      "Img/1 quarto/IMG_0827.JPG"
+    ]
+  },
+  {
+    "id": "apt-terreo-torre5",
+    "name": "Apto Térreo/ Torre 5",
+    "address": "Muro Alto",
+    "rooms": 2,
+    "bathrooms": 2,
+    "maxGuests": 4,
+    "beds": 2,
+    "images": [
+      "img/Terreo/IMG_0855.JPG",
+      "img/Terreo/IMG_0856.JPG",
+      "img/Terreo/IMG_0857.JPG",
+      "img/Terreo/IMG_0858.JPG",
+      "Img/Terreo/IMG_0859.JPG",
+      "img/Terreo/IMG_0860.JPG",
+      "img/Terreo/IMG_0862.JPG",
+      "Img/Terreo/IMG_0863.JPG",
+      "Img/Terreo/IMG_0864.JPG",
+      "Img/Terreo/IMG_0865.JPG",
+      "Img/Terreo/IMG_0866.JPG"
+    ]
+  },
+  {
+    "id": "apt-torre3-3andar-2quartos",
+    "name": "Apto 3º Andar/ Torre 3",
+    "address": "Muro Alto",
+    "rooms": 2,
+    "bathrooms": 2,
+    "maxGuests": 8,
+    "beds": 3,
+    "images": [
+      "Img/quarto 2 torre 3/WhatsApp Image 2025-08-07 at 16.45.23.jpeg",
+      "Img/quarto 2 torre 3/area de serviço.jpeg",
+      "Img/quarto 2 torre 3/area de serviço1.jpeg",
+      "Img/quarto 2 torre 3/cozinha.jpeg",
+      "Img/quarto 2 torre 3/quarto.jpeg",
+      "Img/quarto 2 torre 3/WhatsApp Image 2025-08-07 at 16.45.22.jpeg"
+    ]
+  },
+  {
+    "id": "apt-torre1-2andar",
+    "name": "Apto 2º andar/ Torre 1",
+    "address": "Muro Alto",
+    "rooms": 3,
+    "bathrooms": 2,
+    "maxGuests": 9,
+    "beds": 3,
+    "images": [
+      "Img/Quarto 3 torre 1/IMG_0854.JPG",
+      "Img/Quarto 3 torre 1/IMG_0851.JPG",
+      "Img/Quarto 3 torre 1/IMG_0852.JPG",
+      "Img/Quarto 3 torre 1/IMG_0850.JPG",
+      "Img/Quarto 3 torre 1/IMG_0847.JPG",
+      "Img/Quarto 3 torre 1/IMG_0846.JPG",
+      "Img/Quarto 3 torre 1/IMG_0843.JPG"
+    ]
+  },
+  {
+    "id": "apt-winterville-gravata",
+    "name": "Winterville Gravatá",
+    "address": "Gravatá",
+    "rooms": 2,
+    "bathrooms": 2,
+    "maxGuests": 8,
+    "beds": 2,
+    "images": [
+      "Img/Gravatá/Principal.jpeg",
+      "Img/Gravatá/Cozinha.jpeg",
+      "Img/Gravatá/Quarto 1.jpeg",
+      "Img/Gravatá/Quarto 2.jpeg",
+      "Img/Gravatá/Sala de Jantar.jpeg",
+      "Img/Gravatá/Sala.jpeg",
+      "Img/Gravatá/varanda.jpeg",
+      "Img/Gravatá/Varanda 2.jpeg"
+    ]
+  }
+]
