@@ -8,17 +8,15 @@
   <link rel="stylesheet" href="styles.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
-   <link rel="icon" href="Img/favicon.ico" type="image/x-icon">
-    <!-- Para Apple/Safari -->
-    <link rel="apple-touch-icon" sizes="180x180" href="Img/favicon.ico">
-
-    <!-- Para Android/Chrome -->
-    <link rel="icon" type="image/png" sizes="192x192" href="Img/favicon.ico">
-
-    <!-- Para Windows Metro -->
-    <meta name="msapplication-TileImage" content="cImg/favicon.ico">
-    <meta name="msapplication-TileColor" content="#007b8f">
-    <link rel="shortcut icon" href="Img/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="Img/favicon.ico" type="image/x-icon">
+  <!-- Para Apple/Safari -->
+  <link rel="apple-touch-icon" sizes="180x180" href="Img/favicon.ico">
+  <!-- Para Android/Chrome -->
+  <link rel="icon" type="image/png" sizes="192x192" href="Img/favicon.ico">
+  <!-- Para Windows Metro -->
+  <meta name="msapplication-TileImage" content="cImg/favicon.ico">
+  <meta name="msapplication-TileColor" content="#007b8f">
+  <link rel="shortcut icon" href="Img/favicon.ico" type="image/x-icon">
   <style>
     .reserva-container {
       display: flex;
@@ -182,31 +180,19 @@
   </header>
 
   <main class="reserva-container">
-    <div class="property-card" aria-label="Detalhes do imóvel">
+      <div class="property-card" aria-label="Detalhes do imóvel">
       <div class="quarto-carousel">
         <div class="carousel-images">
-          <img src="img/FullSizeRender 5.JPG" alt="Sala de estar do apartamento" class="carousel-image active" />
-            <img src="img/FullSizeRender 6.JPG" alt="Sala de estar do apartamento" class="carousel-image active" />
-            <img src="img/IMG_1058.JPG" alt="Cozinha equipada" class="carousel-image" />
-            <img src="img/QUARTO1.avif" alt="Quarto 1" class="carousel-image" />
-            <img src="Img/0911162d-ed2f-4b1c-9dc1-7c465d8a1ae2.avif" alt="SUITE" class="carousel-image" />
-            <img src="img/SUITE.jpeg" alt="Quarto 3" class="carousel-image" />
-            <img src="img/FullSizeRender 2.JPG" alt="Banheiro moderno" class="carousel-image" />
-            <img src="Img/6a96d040-e557-42df-86b0-30e4730c6472.webp" alt="Banheiro 2" class="carousel-image" />
-            <img src="Img/varanda.avif" alt="Varanda" class="carousel-image" />
+          <!-- Imagens serão carregadas dinamicamente aqui -->
         </div>
         <button class="carousel-btn prev-btn"></button>
         <button class="carousel-btn next-btn">></button>
       </div>
-      <h3>Muro alto Apartamento</h3>
-      <div class="property-details">
-        <p><i class="fas fa-map-marker-alt"></i>Estrada De Muro Alto - PE 09 Km 009, Ipojuca, PE</p>
-        <p><i class="fas fa-bed"></i> 3 quartos</p>
-        <p><i class="fas fa-bed"></i> 4 camas</p>
-        <p><i class="fas fa-bath"></i> 2 Banheiros</p>
-        <p><i class="fas fa-user"></i> 9 Hóspedes</p>
+      <h3 id="property-name"></h3>
+      <div class="property-details" id="property-details">
+        <!-- Detalhes do imóvel serão carregados dinamicamente aqui -->
       </div>
-      <a href="quarto-detalhes.html" class="btn-detalhes" role="button" type="button">Detalhes</a>
+      <a href="#" class="btn-detalhes" role="button" type="button" id="btn-detalhes">Detalhes</a>
     </div>
 
   <form class="reserva-form" aria-label="Formulário de reserva" novalidate method="POST" action="https://formspree.io/f/mayvkwqv">
@@ -229,12 +215,10 @@
       </div>
       <div class="form-row">
         <div class="form-group">
-          <label for="checkin">Check-in:</label>
-          <input type="date" id="checkin" name="checkin" />
-        </div>
-        <div class="form-group">
-          <label for="checkout">Check-out:</label>
-          <input type="date" id="checkout" name="checkout" />
+          <label for="dateRange">Período:</label>
+          <input type="text" id="dateRange" name="dateRange" placeholder="Selecione o período" readonly />
+          <input type="hidden" id="checkin" name="checkin" />
+          <input type="hidden" id="checkout" name="checkout" />
         </div>
         <div class="form-group">
           <label for="hospedes">Hóspedes:</label>
@@ -322,8 +306,7 @@
       <button type="submit">Enviar</button>
     </form>
   </main>
-
-  <footer class="footer" role="contentinfo">
+   <footer class="footer" role="contentinfo">
     <div class="footer-container">
       <div class="footer-col footer-logo">
         <h2>Beach Flats</h2>
@@ -366,7 +349,69 @@
       <p>Desenvolvido por <a href="https://www.instagram.com/jm_marketingoficial/" target="_blank" rel="noopener">Jm Marketing Digital</a></p>
     </div>
   </footer>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const urlParams = new URLSearchParams(window.location.search);
 
+      const id = urlParams.get('id');
+
+      // Validar se o id está presente
+      if (id === null) {
+        alert('Apartamento não especificado. Redirecionando para a página inicial.');
+        window.location.href = 'index.html';
+        return;
+      }
+
+      fetch('apartments.json')
+        .then(response => response.json())
+        .then(data => {
+          const aptId = id;
+          const apt = data.find(ap => ap.id === aptId);
+          if (!apt) {
+            alert('Apartamento inválido. Redirecionando para a página inicial.');
+            window.location.href = 'index.html';
+            return;
+          }
+
+          // Atualizar carrossel de imagens
+          const carouselImagesDiv = document.querySelector('.carousel-images');
+          carouselImagesDiv.innerHTML = '';
+          apt.images.forEach((imgSrc, i) => {
+            const img = document.createElement('img');
+            img.src = imgSrc;
+            img.alt = `${apt.name} - imagem ${i + 1}`;
+            img.className = 'carousel-image';
+            if (i === 0) img.classList.add('active');
+            carouselImagesDiv.appendChild(img);
+          });
+
+          // Atualizar detalhes do imóvel
+          document.getElementById('property-name').textContent = apt.name;
+          const detailsDiv = document.getElementById('property-details');
+          detailsDiv.innerHTML = `
+            <p><i class="fas fa-map-marker-alt"></i>${apt.address}</p>
+            <p><i class="fas fa-bed"></i> ${apt.rooms} quartos</p>
+            <p><i class="fas fa-bed"></i> ${apt.beds} camas</p>
+            <p><i class="fas fa-bath"></i> ${apt.bathrooms} Banheiros</p>
+            <p><i class="fas fa-user"></i> ${apt.maxGuests} Hóspedes</p>
+          `;
+
+          // Atualizar link detalhes (se necessário)
+          const btnDetalhes = document.getElementById('btn-detalhes');
+          btnDetalhes.href = `quarto-detalhes${data.indexOf(apt) + 1}.html`;
+
+          // Reinicializar carrossel após atualizar imagens
+          if (typeof initCarousel === 'function') {
+            const carouselContainer = document.querySelector('.quarto-carousel');
+            initCarousel(carouselContainer);
+          }
+        })
+        .catch(error => {
+          console.error('Erro ao carregar dados do apartamento:', error);
+          alert('Erro ao carregar dados do apartamento. Tente novamente mais tarde.');
+        });
+    });
+  </script>
    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
 <script src="https://cdn.jsdelivr.net/npm/flatpickr/dist/l10n/pt.js"></script>
 <script>
@@ -378,10 +423,9 @@
     const hospedesParam = urlParams.get('hospedes');
 
     // 2. Preencher os campos do formulário se os parâmetros existirem
-    if (checkinParam) {
+    if (checkinParam && checkoutParam) {
+      document.getElementById('dateRange').value = checkinParam + " a " + checkoutParam;
       document.getElementById('checkin').value = checkinParam;
-    }
-    if (checkoutParam) {
       document.getElementById('checkout').value = checkoutParam;
     }
     if (hospedesParam) {
@@ -400,6 +444,17 @@
     if (reservaForm) {
       reservaForm.addEventListener('submit', function(e) {
         e.preventDefault();
+
+        // Validar período mínimo de 2 diárias
+        const checkinDate = new Date(document.getElementById('checkin').value);
+        const checkoutDate = new Date(document.getElementById('checkout').value);
+        const diffTime = checkoutDate - checkinDate;
+        const diffDays = diffTime / (1000 * 60 * 60 * 24);
+
+        if (diffDays < 2) {
+          alert('A reserva deve ter no mínimo 2 diárias.');
+          return;
+        }
 
         // Coletar todos os dados do formulário
         const formData = {
@@ -461,6 +516,7 @@
     });
   });
 </script>
+ <script src="search-fix.js"></script>
   <script src="script.js"></script>
 </body>
 </html>
